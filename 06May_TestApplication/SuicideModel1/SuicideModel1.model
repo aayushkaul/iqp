@@ -1,0 +1,1278 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE focus-model [
+]>
+<!--Model Created from Reqode--><focus-model auxDataFilesFolder="" classifyAttributesEnabled="false" frea_ai_smart_comment="" inputOutput="false" manual="true">
+    <model-identification modelTag="@06May_TestApplication @1.0 @06May_TestApplication_model @GenAI_generated">
+        <model-identification-field name="Application Name" partOfTag="true" value="06May_TestApplication"/>
+        <model-identification-field name="Application code version #" partOfTag="true" value="1.0"/>
+        <model-identification-field name="Application Function" partOfTag="true" value="06May_TestApplication_model"/>
+        <model-identification-field name="Updated Reason" partOfTag="false" value="New Model"/>
+        <model-identification-field name="Created By" partOfTag="false" value="rgtmp_aayush.kaul"/>
+        <model-identification-field name="Created Date and Time" partOfTag="false" value="29 Apr 2025 08:44:13"/>
+        <model-identification-field name="Updated By" partOfTag="false" value="aayush.kaul"/>
+        <model-identification-field name="Updated Date and Time" partOfTag="false" value="12 Aug 2025 14:44:17"/>
+        <model-identification-field name="Application Sub Function" partOfTag="true" value="GenAI_generated"/>
+        <model-identification-field name="Test Stage" partOfTag="false" value=""/>
+        <model-identification-field name="Criticality" partOfTag="false" value=""/>
+        <model-identification-field name="Project" partOfTag="false" value=""/>
+        <model-identification-field name="Epic" partOfTag="false" value=""/>
+        <model-identification-field name="Feature" partOfTag="false" value=""/>
+        <model-identification-field name="User Story" partOfTag="false" value=""/>
+        <model-identification-field name="Use attribute pool" partOfTag="false" value="false"/>
+    </model-identification>
+    <attribute attr_class="NONE" dependencies="false" description="" group="" iotype="NEITHER" name="leave_type" parentDetailsApplicationName="" parentDetailsFunctionality="" parentDetailsModel="" parentDetailsModelTag="@06May_TestApplication @1.0 @06May_TestApplication_model @GenAI_generated" parentDetailsPortfolio="" parentDetailsTenantId="" parentDetailsUsername="" poolId="" revision="" type="STRING">
+        <value name="vacation" neg-value="false" weight="1"/>
+        <value name="sick" neg-value="false" weight="1"/>
+        <value name="personal" neg-value="false" weight="1"/>
+        <requirement ID="1.0"/>
+    </attribute>
+    <attribute attr_class="NONE" dependencies="false" description="" group="" iotype="NEITHER" name="start_date" parentDetailsApplicationName="" parentDetailsFunctionality="" parentDetailsModel="" parentDetailsModelTag="@06May_TestApplication @1.0 @06May_TestApplication_model @GenAI_generated" parentDetailsPortfolio="" parentDetailsTenantId="" parentDetailsUsername="" poolId="" revision="" type="STRING">
+        <value name="valid_date" neg-value="false" weight="1"/>
+        <value name="invalid_date" neg-value="true" weight="1"/>
+        <requirement ID="1.0"/>
+    </attribute>
+    <attribute attr_class="NONE" dependencies="false" description="" group="" iotype="NEITHER" name="end_date" parentDetailsApplicationName="" parentDetailsFunctionality="" parentDetailsModel="" parentDetailsModelTag="@06May_TestApplication @1.0 @06May_TestApplication_model @GenAI_generated" parentDetailsPortfolio="" parentDetailsTenantId="" parentDetailsUsername="" poolId="" revision="" type="STRING">
+        <value name="valid_date" neg-value="false" weight="1"/>
+        <value name="invalid_date" neg-value="true" weight="1"/>
+        <requirement ID="1.0"/>
+    </attribute>
+    <attribute attr_class="NONE" dependencies="false" description="" group="" iotype="NEITHER" name="leave_balance" parentDetailsApplicationName="" parentDetailsFunctionality="" parentDetailsModel="" parentDetailsModelTag="@06May_TestApplication @1.0 @06May_TestApplication_model @GenAI_generated" parentDetailsPortfolio="" parentDetailsTenantId="" parentDetailsUsername="" poolId="" revision="" type="STRING">
+        <value name="sufficient" neg-value="false" weight="1"/>
+        <value name="insufficient" neg-value="true" weight="1"/>
+        <requirement ID="1.0"/>
+    </attribute>
+    <attribute attr_class="NONE" dependencies="false" description="" group="" iotype="NEITHER" name="manager_approval" parentDetailsApplicationName="" parentDetailsFunctionality="" parentDetailsModel="" parentDetailsModelTag="@06May_TestApplication @1.0 @06May_TestApplication_model @GenAI_generated" parentDetailsPortfolio="" parentDetailsTenantId="" parentDetailsUsername="" poolId="" revision="" type="STRING">
+        <value name="approved" neg-value="false" weight="1"/>
+        <value name="rejected" neg-value="true" weight="1"/>
+        <value name="pending" neg-value="false" weight="1"/>
+        <requirement ID="2.0"/>
+    </attribute>
+    <attribute attr_class="NONE" dependencies="false" description="" group="" iotype="NEITHER" name="leave_status" parentDetailsApplicationName="" parentDetailsFunctionality="" parentDetailsModel="" parentDetailsModelTag="@06May_TestApplication @1.0 @06May_TestApplication_model @GenAI_generated" parentDetailsPortfolio="" parentDetailsTenantId="" parentDetailsUsername="" poolId="" revision="" type="STRING">
+        <value name="pending" neg-value="false" weight="1"/>
+        <value name="approved" neg-value="false" weight="1"/>
+        <value name="rejected" neg-value="true" weight="1"/>
+        <value name="notapplicable" neg-value="false" weight="1"/>
+        <requirement ID="4.0"/>
+    </attribute>
+    <attribute attr_class="NONE" dependencies="false" description="" group="" iotype="NEITHER" name="modification_type" parentDetailsApplicationName="" parentDetailsFunctionality="" parentDetailsModel="" parentDetailsModelTag="@06May_TestApplication @1.0 @06May_TestApplication_model @GenAI_generated" parentDetailsPortfolio="" parentDetailsTenantId="" parentDetailsUsername="" poolId="" revision="" type="STRING">
+        <value name="edit" neg-value="false" weight="1"/>
+        <value name="cancel" neg-value="false" weight="1"/>
+        <requirement ID="5.0"/>
+    </attribute>
+    <restriction expression="!(leave_balance.equals(&quot;insufficient&quot;)) || manager_approval.equals(&quot;rejected&quot;)" group="" groupedExpression="!(leave_balance.equals(&quot;insufficient&quot;)) || manager_approval.equals(&quot;rejected&quot;)" iff="false" isActive="false" isAutoGenerated="false" name="" type="If-Then">
+        <requirement ID="1.0"/>
+        <if-expr is_or="true">
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="insufficient"/>
+            </focus-ctd-cond>
+        </if-expr>
+        <then-expr is_or="true">
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="rejected"/>
+            </focus-ctd-cond>
+        </then-expr>
+    </restriction>
+    <restriction expression="!(start_date.equals(&quot;invalid_date&quot;) || end_date.equals(&quot;invalid_date&quot;)) || leave_status.equals(&quot;notapplicable&quot;)" group="" groupedExpression="!(start_date.equals(&quot;invalid_date&quot;) || end_date.equals(&quot;invalid_date&quot;)) || leave_status.equals(&quot;notapplicable&quot;)" iff="false" isActive="false" isAutoGenerated="false" name="" type="If-Then">
+        <requirement ID="1.0"/>
+        <if-expr is_or="true">
+            <focus-ctd-cond attribute="start_date" operation="Equals">
+                <focus-ctd-cond-val value="invalid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="end_date" operation="Equals">
+                <focus-ctd-cond-val value="invalid_date"/>
+            </focus-ctd-cond>
+        </if-expr>
+        <then-expr is_or="true">
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="notapplicable"/>
+            </focus-ctd-cond>
+        </then-expr>
+    </restriction>
+    <restriction expression="!(manager_approval.equals(&quot;rejected&quot;)) || leave_status.equals(&quot;rejected&quot;)" group="" groupedExpression="!(manager_approval.equals(&quot;rejected&quot;)) || leave_status.equals(&quot;rejected&quot;)" iff="false" isActive="false" isAutoGenerated="false" name="" type="If-Then">
+        <requirement ID="2.0"/>
+        <if-expr is_or="true">
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="rejected"/>
+            </focus-ctd-cond>
+        </if-expr>
+        <then-expr is_or="true">
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="rejected"/>
+            </focus-ctd-cond>
+        </then-expr>
+    </restriction>
+    <restriction expression="!(modification_type.equals(&quot;cancel&quot;)) || leave_status.equals(&quot;notapplicable&quot;)" group="" groupedExpression="!(modification_type.equals(&quot;cancel&quot;)) || leave_status.equals(&quot;notapplicable&quot;)" iff="false" isActive="false" isAutoGenerated="false" name="" type="If-Then">
+        <requirement ID="5.0"/>
+        <if-expr is_or="true">
+            <focus-ctd-cond attribute="modification_type" operation="Equals">
+                <focus-ctd-cond-val value="cancel"/>
+            </focus-ctd-cond>
+        </if-expr>
+        <then-expr is_or="true">
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="notapplicable"/>
+            </focus-ctd-cond>
+        </then-expr>
+    </restriction>
+    <restriction expression="!(leave_status.equals(&quot;pending&quot;)) || manager_approval.equals(&quot;pending&quot;)" group="" groupedExpression="!(leave_status.equals(&quot;pending&quot;)) || manager_approval.equals(&quot;pending&quot;)" iff="false" isActive="false" isAutoGenerated="false" name="" type="If-Then">
+        <requirement ID="4.0"/>
+        <if-expr is_or="true">
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="pending"/>
+            </focus-ctd-cond>
+        </if-expr>
+        <then-expr is_or="true">
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="pending"/>
+            </focus-ctd-cond>
+        </then-expr>
+    </restriction>
+    <restriction expression="!(manager_approval.equals(&quot;approved&quot;)) || leave_balance.equals(&quot;sufficient&quot;)" group="" groupedExpression="!(manager_approval.equals(&quot;approved&quot;)) || leave_balance.equals(&quot;sufficient&quot;)" iff="false" isActive="false" isAutoGenerated="false" name="" type="If-Then">
+        <requirement ID="2.0"/>
+        <if-expr is_or="true">
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="approved"/>
+            </focus-ctd-cond>
+        </if-expr>
+        <then-expr is_or="true">
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="sufficient"/>
+            </focus-ctd-cond>
+        </then-expr>
+    </restriction>
+    <negative-combination>
+        <attr-value attribute="end_date" value="invalid_date"/>
+    </negative-combination>
+    <negative-combination>
+        <attr-value attribute="leave_balance" value="insufficient"/>
+    </negative-combination>
+    <negative-combination>
+        <attr-value attribute="leave_status" value="rejected"/>
+    </negative-combination>
+    <negative-combination>
+        <attr-value attribute="manager_approval" value="rejected"/>
+    </negative-combination>
+    <negative-combination>
+        <attr-value attribute="start_date" value="invalid_date"/>
+    </negative-combination>
+    <requirements-collection>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="" Keywords="" Ranking="2147483647" RequirementDescription="" RequirementId="1.0" Restrictions=""/>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="" Keywords="" Ranking="2147483647" RequirementDescription="" RequirementId="2.0" Restrictions=""/>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="" Keywords="" Ranking="2147483647" RequirementDescription="" RequirementId="4.0" Restrictions=""/>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="" Keywords="" Ranking="2147483647" RequirementDescription="" RequirementId="5.0" Restrictions=""/>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="" Keywords="" Ranking="2147483647" RequirementDescription="" RequirementId=" 5.0" Restrictions=""/>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="" Keywords="" Ranking="2147483647" RequirementDescription="" RequirementId="6.0" Restrictions=""/>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="" Keywords="" Ranking="2147483647" RequirementDescription="" RequirementId=" 4.0" Restrictions=""/>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="" Keywords="" Ranking="2147483647" RequirementDescription="" RequirementId="7.0" Restrictions=""/>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="" Keywords="" Ranking="2147483647" RequirementDescription="" RequirementId=" 3.0" Restrictions=""/>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="" Keywords="" Ranking="2147483647" RequirementDescription="" RequirementId=" 2.0" Restrictions=""/>
+    </requirements-collection>
+    <coverage-reqs-sets defaultCoverageRequirementsSet="default">
+        <coverage-reqs-set description="" name="default">
+            <coverage-req>
+                <attribute name="leave_type"/>
+                <attribute name="start_date"/>
+                <attribute name="end_date"/>
+                <attribute name="leave_balance"/>
+                <attribute name="manager_approval"/>
+                <attribute name="leave_status"/>
+                <attribute name="modification_type"/>
+                <coverage-goal coverage-goal-val="1"/>
+            </coverage-req>
+        </coverage-reqs-set>
+    </coverage-reqs-sets>
+    <neg-coverage-reqs-sets defaultCoverageRequirementsSet="SingleNegativeCoverageRequirementsSet" isAutoNegCoverageRequirements="true">
+        <coverage-reqs-set description="" name="SingleNegativeCoverageRequirementsSet">
+            <coverage-req>
+                <coverage-goal coverage-goal-val="1"/>
+                <negative-attribute-combination>
+                    <attribute name="end_date"/>
+                </negative-attribute-combination>
+            </coverage-req>
+            <coverage-req>
+                <coverage-goal coverage-goal-val="1"/>
+                <negative-attribute-combination>
+                    <attribute name="leave_balance"/>
+                </negative-attribute-combination>
+            </coverage-req>
+            <coverage-req>
+                <coverage-goal coverage-goal-val="1"/>
+                <negative-attribute-combination>
+                    <attribute name="leave_status"/>
+                </negative-attribute-combination>
+            </coverage-req>
+            <coverage-req>
+                <coverage-goal coverage-goal-val="1"/>
+                <negative-attribute-combination>
+                    <attribute name="manager_approval"/>
+                </negative-attribute-combination>
+            </coverage-req>
+            <coverage-req>
+                <coverage-goal coverage-goal-val="1"/>
+                <negative-attribute-combination>
+                    <attribute name="start_date"/>
+                </negative-attribute-combination>
+            </coverage-req>
+        </coverage-reqs-set>
+    </neg-coverage-reqs-sets>
+    <focus-ctd-decoration decorationName="Web" decorationType="cucumberDecoration" isActiveDecoration="true"/>
+    <focus-ctd-decoration decorationName="DefaultTestCaseNameDecoration" decorationType="testCaseName" isActiveDecoration="false"/>
+    <focus-ctd-decoration decorationName="DefaultFreeStyleDecoration" decorationType="freeStyle" isActiveDecoration="false"/>
+    <focus-ctd-decoration decorationName="DefaultCucumberDecoration" decorationType="cucumberDecoration" isActiveDecoration="false"/>
+    <focus-ctd-decoration decorationName="DefaultStructuredDecoration" decorationType="structuredDecoration" isActiveDecoration="false">
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="testcase-1" negative="false" suppressNewLine="false" triggerType="Test_Case_Name">
+            <requirement ID=" 2.0"/>
+            <requirement ID=" 3.0"/>
+            <requirement ID=" 4.0"/>
+            <requirement ID=" 5.0"/>
+            <requirement ID="1.0"/>
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Cancel Pending Vacation Leave Request"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="vacation"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="start_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="end_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="sufficient"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="approved"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="pending"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="modification_type" operation="Equals">
+                <focus-ctd-cond-val value="cancel"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-2" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The employee has a pending vacation leave request with valid start and end dates"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="start_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="end_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="pending"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-1" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The user is logged in as an employee"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="vacation"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-1" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee navigates to the leave request page"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="vacation"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-3" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The employee has sufficient leave balance"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="sufficient"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-2" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee selects the pending vacation leave request to cancel"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="pending"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="modification_type" operation="Equals">
+                <focus-ctd-cond-val value="cancel"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-3" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee clicks on the cancel button"/>
+                    <focus-ctd-template text="The employee confirms the cancellation"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The system displays a confirmation message for successful cancellation"/>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="modification_type" operation="Equals">
+                <focus-ctd-cond-val value="cancel"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-4" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The system prompts the employee to confirm the cancellation"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The leave request is no longer visible in the employee's pending requests"/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="pending"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="testcase-2" negative="false" suppressNewLine="false" triggerType="Test_Case_Name">
+            <requirement ID=" 5.0"/>
+            <requirement ID="1.0"/>
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Edit Pending Personal Leave Request"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="personal"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="start_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="end_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="sufficient"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="pending"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="notapplicable"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="modification_type" operation="Equals">
+                <focus-ctd-cond-val value="edit"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-4" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The user is logged in as an employee"/>
+            </focus-ctd-single-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-5" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee navigates to the leave request page"/>
+                    <focus-ctd-template text="The employee submits the modified leave request"/>
+                    <focus-ctd-template text="The system notifies the manager of the modification"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The manager is notified of the modification"/>
+                    <focus-ctd-template text="The employee receives a confirmation message after submitting the modified leave request"/>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-5" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The employee has a pending leave request with the specified attributes"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="personal"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="start_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="end_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="sufficient"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="pending"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-6" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee selects the pending leave request to modify"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="personal"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="start_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="end_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="sufficient"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="pending"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-6" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The employee has sufficient leave balance"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="sufficient"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-7" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The system checks if the updated leave dates are within the allowed balance"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The system updates the leave balance accordingly"/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="sufficient"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-8" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee clicks on the edit button to modify the leave request"/>
+                    <focus-ctd-template text="The employee updates the leave dates or type"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The employee can edit the dates or type of the leave request"/>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="modification_type" operation="Equals">
+                <focus-ctd-cond-val value="edit"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="testcase-3" negative="false" suppressNewLine="false" triggerType="Test_Case_Name">
+            <requirement ID=" 2.0"/>
+            <requirement ID=" 3.0"/>
+            <requirement ID=" 4.0"/>
+            <requirement ID=" 5.0"/>
+            <requirement ID="1.0"/>
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Edit Sick Leave Request"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="sick"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="start_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="end_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="sufficient"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="approved"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="approved"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="modification_type" operation="Equals">
+                <focus-ctd-cond-val value="edit"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-7" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The user is logged in as an employee"/>
+            </focus-ctd-single-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-9" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee navigates to the leave request page"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The system displays a confirmation message that the leave request has been updated"/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-8" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The employee has a leave request with sufficient balance"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="sufficient"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-10" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The system checks if the new dates are within the allowed balance"/>
+                    <focus-ctd-template text="The system updates the leave balance accordingly"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The leave balance is updated accordingly"/>
+                    <focus-ctd-template text="The employee can view the updated leave balance"/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="sufficient"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-9" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The employee has a leave request with approved status"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="approved"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-10" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The manager has approved the leave request"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="approved"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-11" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The system notifies the manager of the updated leave request"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The manager receives a notification of the updated leave request"/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="approved"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-11" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The leave request is of type sick"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="sick"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-12" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee selects the approved sick leave request to edit"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="sick"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="approved"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-13" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee edits the start and end dates of the leave request"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The employee can view the updated leave request with the new dates"/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="start_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="end_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-14" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee submits the edited leave request"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="modification_type" operation="Equals">
+                <focus-ctd-cond-val value="edit"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-15" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The system updates the leave request status"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="approved"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="approved"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="testcase-4" negative="false" suppressNewLine="false" triggerType="Test_Case_Name">
+            <requirement ID=" 2.0"/>
+            <requirement ID=" 3.0"/>
+            <requirement ID=" 4.0"/>
+            <requirement ID=" 5.0"/>
+            <requirement ID="1.0"/>
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Modify Pending Vacation Leave Request Approved"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="vacation"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="start_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="end_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="sufficient"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="rejected"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="pending"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="modification_type" operation="Equals">
+                <focus-ctd-cond-val value="edit"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-12" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The user is logged in as an employee"/>
+            </focus-ctd-single-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-16" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee navigates to the leave request page"/>
+                    <focus-ctd-template text="The employee submits the modified leave request"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text=""/>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-13" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The employee has a pending leave request for vacation with valid start and end dates"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="vacation"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="start_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="end_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="pending"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-14" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The employee has sufficient leave balance"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="sufficient"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-17" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The system checks if the new dates are within the allowed balance"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The leave balance is updated accordingly"/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="sufficient"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-18" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee selects the pending vacation leave request to modify"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="vacation"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="pending"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-19" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee edits the start and/or end dates of the leave request"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The system updates the leave request with the new dates"/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="modification_type" operation="Equals">
+                <focus-ctd-cond-val value="edit"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-20" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The system notifies the manager of the modification"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The system notifies the manager of the modification"/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="rejected"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="testcase-5" negative="false" suppressNewLine="false" triggerType="Test_Case_Name">
+            <requirement ID=" 2.0"/>
+            <requirement ID=" 3.0"/>
+            <requirement ID=" 4.0"/>
+            <requirement ID=" 5.0"/>
+            <requirement ID="1.0"/>
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Modify Pending Vacation Leave Request Invalid End Date"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="vacation"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="start_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="end_date" operation="Equals">
+                <focus-ctd-cond-val value="invalid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="sufficient"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="pending"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="approved"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="modification_type" operation="Equals">
+                <focus-ctd-cond-val value="edit"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-15" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The user is logged in as an employee"/>
+            </focus-ctd-single-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-21" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee navigates to the leave request page"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The system displays the total number of days requested"/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-16" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The employee has a pending leave request for vacation"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="vacation"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="pending"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-22" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee selects the pending vacation leave request to modify"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="vacation"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="pending"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-17" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The employee has sufficient leave balance"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="sufficient"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-18" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The leave request has an invalid end date"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="end_date" operation="Equals">
+                <focus-ctd-cond-val value="invalid_date"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-23" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The system checks if the new end date is valid"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The system displays an error message if the new end date is invalid"/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="end_date" operation="Equals">
+                <focus-ctd-cond-val value="invalid_date"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-24" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee attempts to edit the end date of the leave request"/>
+                    <focus-ctd-template text="The system updates the leave request with the new end date if valid"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The system displays a confirmation message that the leave request has been modified successfully"/>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="modification_type" operation="Equals">
+                <focus-ctd-cond-val value="edit"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="testcase-6" negative="false" suppressNewLine="false" triggerType="Test_Case_Name">
+            <requirement ID=" 2.0"/>
+            <requirement ID=" 3.0"/>
+            <requirement ID=" 4.0"/>
+            <requirement ID=" 5.0"/>
+            <requirement ID="1.0"/>
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Edit Leave Request with Invalid Start Date"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="vacation"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="start_date" operation="Equals">
+                <focus-ctd-cond-val value="invalid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="end_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="sufficient"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="approved"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="approved"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="modification_type" operation="Equals">
+                <focus-ctd-cond-val value="edit"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-19" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The user is logged in as an employee"/>
+            </focus-ctd-single-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-25" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee navigates to the leave request page"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The system displays the total number of days requested"/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-20" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The employee has a pending leave request with the specified leave type, start date, and end date"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="vacation"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="start_date" operation="Equals">
+                <focus-ctd-cond-val value="invalid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="end_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-26" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee selects the pending leave request to edit"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="vacation"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="start_date" operation="Equals">
+                <focus-ctd-cond-val value="invalid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="end_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-21" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The employee has sufficient leave balance"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="sufficient"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-22" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The manager has approved the leave request"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="approved"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-23" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The leave request status is approved"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="approved"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-27" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee attempts to edit the leave request"/>
+                    <focus-ctd-template text="The employee submits the edited leave request"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text=""/>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="modification_type" operation="Equals">
+                <focus-ctd-cond-val value="edit"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="testcase-7" negative="false" suppressNewLine="false" triggerType="Test_Case_Name">
+            <requirement ID="6.0"/>
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Cancel Sick Leave Request"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="sick"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="start_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="end_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="sufficient"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="pending"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="rejected"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="modification_type" operation="Equals">
+                <focus-ctd-cond-val value="cancel"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-24" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The employee has a pending sick leave request"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="sick"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="pending"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-28" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee selects the pending sick leave request to cancel"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="sick"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="pending"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-25" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The employee has sufficient leave balance"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="sufficient"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-26" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The employee is logged into the system"/>
+            </focus-ctd-single-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-29" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee navigates to the leave request page"/>
+                    <focus-ctd-template text="The system prompts the employee to confirm cancellation"/>
+                    <focus-ctd-template text="The employee confirms the cancellation"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The employee receives a confirmation message for the cancellation"/>
+                    <focus-ctd-template text="The system displays an updated list of leave requests with the canceled request removed"/>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-27" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The leave request is in 'rejected' status"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="rejected"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-30" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee clicks on the 'cancel' button"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The leave request is successfully canceled"/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="modification_type" operation="Equals">
+                <focus-ctd-cond-val value="cancel"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-31" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The system updates the leave request status to 'canceled'"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="rejected"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="modification_type" operation="Equals">
+                <focus-ctd-cond-val value="cancel"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="testcase-8" negative="false" suppressNewLine="false" triggerType="Test_Case_Name">
+            <requirement ID="7.0"/>
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Edit Vacation Leave Request with Insufficient Balance"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="vacation"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="start_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="end_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="insufficient"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="approved"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_status" operation="Equals">
+                <focus-ctd-cond-val value="approved"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="modification_type" operation="Equals">
+                <focus-ctd-cond-val value="edit"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-28" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The user is logged in as an employee with a valid account"/>
+            </focus-ctd-single-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-32" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The system notifies the manager of the modifications made to the leave request"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The system maintains a record of the modifications made to the leave request"/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-29" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The employee has a pending leave request for vacation with insufficient balance"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="leave_type" operation="Equals">
+                <focus-ctd-cond-val value="vacation"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="insufficient"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-30" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The manager has approved the initial leave request"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="approved"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-33" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee submits the edited leave request for manager approval"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The manager receives a notification of the modified leave request and can view the updated details"/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="manager_approval" operation="Equals">
+                <focus-ctd-cond-val value="approved"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-34" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee navigates to the leave request page and selects the pending vacation leave request to edit"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="modification_type" operation="Equals">
+                <focus-ctd-cond-val value="edit"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-35" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The employee updates the start and end dates of the leave request to new valid dates"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="start_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="end_date" operation="Equals">
+                <focus-ctd-cond-val value="valid_date"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-36" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The system checks if the updated dates are within the allowed balance"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The system displays an error message indicating that the leave balance is insufficient for the updated dates"/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="leave_balance" operation="Equals">
+                <focus-ctd-cond-val value="insufficient"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+    </focus-ctd-decoration>
+    <deactivates/>
+    <attrs-to-delete/>
+    <pool_comments/>
+    <db-dependencies/>
+    <focus-ctd-model-sync>
+        <focus-ctd-model-sync-mult/>
+        <focus-ctd-model-sync-na/>
+    </focus-ctd-model-sync>
+</focus-model>
