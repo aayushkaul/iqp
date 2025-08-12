@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE focus-model [
+]>
+<!--test--><focus-model auxDataFilesFolder="" classifyAttributesEnabled="false" frea_ai_smart_comment="" inputOutput="false" manual="true">
+    <model-identification modelTag="@Sample @5.12 @Sample_FunctionalityTest @task">
+        <model-identification-field name="Application Name" partOfTag="true" value="Sample"/>
+        <model-identification-field name="Application code version #" partOfTag="true" value="5.12"/>
+        <model-identification-field name="Application Function" partOfTag="true" value="Sample_FunctionalityTest"/>
+        <model-identification-field name="Updated Reason" partOfTag="false" value="New Model"/>
+        <model-identification-field name="Created By" partOfTag="false" value="sheetsin@in.ibm.com"/>
+        <model-identification-field name="Created Date and Time" partOfTag="false" value="09 Aug 2019 16:06:18"/>
+        <model-identification-field name="Updated By" partOfTag="false" value="akireddy.vamsi.krishna"/>
+        <model-identification-field name="Updated Date and Time" partOfTag="false" value="12 Aug 2025 08:14:20"/>
+        <model-identification-field name="Application Sub Function" partOfTag="true" value="task"/>
+        <model-identification-field name="Test Stage" partOfTag="false" value=""/>
+        <model-identification-field name="Criticality" partOfTag="false" value=""/>
+        <model-identification-field name="Project" partOfTag="false" value=""/>
+        <model-identification-field name="Epic" partOfTag="false" value=""/>
+        <model-identification-field name="Feature" partOfTag="false" value=""/>
+        <model-identification-field name="User Story" partOfTag="false" value=""/>
+        <model-identification-field name="Use attribute pool" partOfTag="false" value="true"/>
+    </model-identification>
+    <attribute attr_class="NONE" dependencies="false" description="Imported from model Rel 5.4_IQP_Regression_Users: Imported from model Rel 5.4_IQP Regression" group="G1" iotype="NEITHER" name="UserRole" parentDetailsApplicationName="" parentDetailsFunctionality="" parentDetailsModel="" parentDetailsModelTag="@Sample @5.12 @Sample_FunctionalityTest @task" parentDetailsPortfolio="" parentDetailsTenantId="" parentDetailsUsername="" poolId="" revision="" type="STRING">
+        <value name="Admin" neg-value="false" weight="1"/>
+        <value name="Test Lead" neg-value="false" weight="1"/>
+        <value name="QA" neg-value="false" weight="1"/>
+        <value name="Defect Manager" neg-value="false" weight="1"/>
+    </attribute>
+    <attribute attr_class="NONE" dependencies="false" description="Imported from model Rel 5.4_IQP_Regression_Users: Imported from model Rel 5.4_IQP Regression" group="G2" iotype="NEITHER" name="AddUser" parentDetailsApplicationName="" parentDetailsFunctionality="" parentDetailsModel="" parentDetailsModelTag="@Sample @5.12 @Sample_FunctionalityTest @task" parentDetailsPortfolio="" parentDetailsTenantId="" parentDetailsUsername="" poolId="" revision="" type="STRING">
+        <value name="UserName" neg-value="false" weight="1"/>
+        <value name="UserEmail" neg-value="false" weight="1"/>
+        <value name="UserID" neg-value="false" weight="1"/>
+        <value name="Portfolio" neg-value="false" weight="1"/>
+        <value name="SearchApplication" neg-value="false" weight="1"/>
+        <value name="SelectApplication" neg-value="false" weight="1"/>
+        <value name="AddUpdateToolAccess" neg-value="false" weight="1"/>
+        <value name="CreateUser" neg-value="false" weight="1"/>
+    </attribute>
+    <attribute attr_class="NONE" dependencies="false" description="Imported from model Rel 5.4_IQP_Regression_Users: Imported from model Rel 5.4_IQP Regression" group="" iotype="NEITHER" name="EditUser" parentDetailsApplicationName="" parentDetailsFunctionality="" parentDetailsModel="" parentDetailsModelTag="@Sample @5.12 @Sample_FunctionalityTest @task" parentDetailsPortfolio="" parentDetailsTenantId="" parentDetailsUsername="" poolId="" revision="" type="STRING">
+        <value name="SearchUser" neg-value="false" weight="1"/>
+        <value name="SelectUser" neg-value="false" weight="1"/>
+        <value name="EditDetails" neg-value="false" weight="1"/>
+        <value name="SearchApplication" neg-value="false" weight="1"/>
+        <value name="SelectApplication" neg-value="false" weight="1"/>
+        <value name="AddUpdateToolAccess" neg-value="false" weight="1"/>
+        <value name="UpdateUser" neg-value="false" weight="1"/>
+    </attribute>
+    <attribute attr_class="NONE" dependencies="false" description="Imported from model Rel 5.4_IQP_Regression_Users: Imported from model Rel 5.4_IQP Regression" group="" iotype="NEITHER" name="DeleteUser" parentDetailsApplicationName="" parentDetailsFunctionality="" parentDetailsModel="" parentDetailsModelTag="@Sample @5.12 @Sample_FunctionalityTest @task" parentDetailsPortfolio="" parentDetailsTenantId="" parentDetailsUsername="" poolId="" revision="" type="STRING">
+        <value name="SearchUser" neg-value="false" weight="1"/>
+        <value name="SelectUser" neg-value="false" weight="1"/>
+        <value name="DeleteUser" neg-value="false" weight="1"/>
+        <value name="MsgBoxYesButton" neg-value="false" weight="1"/>
+        <value name="MsgBoxCancelButton" neg-value="false" weight="1"/>
+    </attribute>
+    <attribute attr_class="NONE" dependencies="false" description="Test Desc" group="" iotype="NEITHER" name="DummayName" parentDetailsApplicationName="" parentDetailsFunctionality="" parentDetailsModel="" parentDetailsModelTag="@Sample @5.12 @Sample_FunctionalityTest @task" parentDetailsPortfolio="" parentDetailsTenantId="" parentDetailsUsername="" poolId="" revision="" type="STRING">
+        <value description="Desc" name="Val" neg-value="true" weight="1">
+            <requirement ID="Do1.Id1"/>
+        </value>
+        <value description="Desc" name="Val_1" neg-value="true" weight="1">
+            <requirement ID="Do1.Id1"/>
+        </value>
+        <requirement ID="Do1.Id1"/>
+    </attribute>
+    <attribute attr_class="NONE" dependencies="false" description="Imported from model Rel 5.4_IQP_Regression_Users: Imported from model Rel 5.4_IQP Regression" group="" iotype="NEITHER" name="UserRole_1" parentDetailsApplicationName="" parentDetailsFunctionality="" parentDetailsModel="" parentDetailsModelTag="@Sample @5.12 @Sample_FunctionalityTest @task" parentDetailsPortfolio="" parentDetailsTenantId="" parentDetailsUsername="" poolId="" revision="" type="STRING">
+        <value description="Desc" name="TestVal12" neg-value="true" weight="1">
+            <requirement ID="Do1.Id1"/>
+        </value>
+        <value description="Desc" name="TestVal12_1" neg-value="true" weight="1">
+            <requirement ID="Do1.Id1"/>
+        </value>
+        <value description="Desc" name="-5" neg-value="false" weight="1">
+            <requirement ID="Do1.Id1"/>
+        </value>
+        <value description="Desc" name="-4" neg-value="false" weight="1">
+            <requirement ID="Do1.Id1"/>
+        </value>
+        <value description="Desc" name="-3" neg-value="false" weight="1">
+            <requirement ID="Do1.Id1"/>
+        </value>
+        <value description="Desc" name="-2" neg-value="false" weight="1">
+            <requirement ID="Do1.Id1"/>
+        </value>
+        <value description="Desc" name="-1" neg-value="false" weight="1">
+            <requirement ID="Do1.Id1"/>
+        </value>
+        <value description="Desc" name="0" neg-value="false" weight="1">
+            <requirement ID="Do1.Id1"/>
+        </value>
+        <value description="Desc" name="1" neg-value="false" weight="1">
+            <requirement ID="Do1.Id1"/>
+        </value>
+        <value description="Desc" name="2" neg-value="false" weight="1">
+            <requirement ID="Do1.Id1"/>
+        </value>
+        <value description="Desc" name="3" neg-value="false" weight="1">
+            <requirement ID="Do1.Id1"/>
+        </value>
+        <value name="ValExp" neg-value="true" weight="1"/>
+        <value name="Val643643" neg-value="false" weight="1"/>
+        <requirement ID="Do1.Id1"/>
+    </attribute>
+    <restriction expression="!(UserRole.equals(&quot;Admin&quot;)) || EditUser.equals(&quot;SelectUser&quot;)" group="" groupedExpression="!(UserRole.equals(&quot;Admin&quot;)) || EditUser.equals(&quot;SelectUser&quot;)" iff="false" isActive="true" isAutoGenerated="false" name="" type="If-Then">
+        <if-expr is_or="false">
+            <focus-ctd-cond attribute="UserRole" operation="Equals">
+                <focus-ctd-cond-val value="Admin"/>
+            </focus-ctd-cond>
+        </if-expr>
+        <then-expr is_or="false">
+            <focus-ctd-cond attribute="EditUser" operation="Equals">
+                <focus-ctd-cond-val value="SelectUser"/>
+            </focus-ctd-cond>
+        </then-expr>
+    </restriction>
+    <dont-care>
+        <attr-value attribute="DummayName" value="Val"/>
+    </dont-care>
+    <dont-care>
+        <attr-value attribute="DummayName" value="Val_1"/>
+    </dont-care>
+    <dont-care>
+        <attr-value attribute="UserRole_1" value="TestVal12"/>
+    </dont-care>
+    <dont-care>
+        <attr-value attribute="UserRole_1" value="TestVal12_1"/>
+    </dont-care>
+    <dont-care>
+        <attr-value attribute="UserRole_1" value="ValExp"/>
+    </dont-care>
+    <negative-combination>
+        <attr-value attribute="DummayName" value="Val"/>
+    </negative-combination>
+    <negative-combination>
+        <attr-value attribute="DummayName" value="Val_1"/>
+    </negative-combination>
+    <negative-combination>
+        <attr-value attribute="UserRole_1" value="TestVal12"/>
+    </negative-combination>
+    <negative-combination>
+        <attr-value attribute="UserRole_1" value="TestVal12_1"/>
+    </negative-combination>
+    <negative-combination>
+        <attr-value attribute="UserRole_1" value="ValExp"/>
+    </negative-combination>
+    <requirements-tracking-combination>
+        <attr-value attribute="DummayName" value="Val"/>
+        <requirement ID="Do1.Id1"/>
+    </requirements-tracking-combination>
+    <requirements-tracking-combination>
+        <attr-value attribute="DummayName" value="Val_1"/>
+        <requirement ID="Do1.Id1"/>
+    </requirements-tracking-combination>
+    <requirements-tracking-combination>
+        <attr-value attribute="UserRole_1" value="-1"/>
+        <requirement ID="Do1.Id1"/>
+    </requirements-tracking-combination>
+    <requirements-tracking-combination>
+        <attr-value attribute="UserRole_1" value="-2"/>
+        <requirement ID="Do1.Id1"/>
+    </requirements-tracking-combination>
+    <requirements-tracking-combination>
+        <attr-value attribute="UserRole_1" value="-3"/>
+        <requirement ID="Do1.Id1"/>
+    </requirements-tracking-combination>
+    <requirements-tracking-combination>
+        <attr-value attribute="UserRole_1" value="-4"/>
+        <requirement ID="Do1.Id1"/>
+    </requirements-tracking-combination>
+    <requirements-tracking-combination>
+        <attr-value attribute="UserRole_1" value="-5"/>
+        <requirement ID="Do1.Id1"/>
+    </requirements-tracking-combination>
+    <requirements-tracking-combination>
+        <attr-value attribute="UserRole_1" value="0"/>
+        <requirement ID="Do1.Id1"/>
+    </requirements-tracking-combination>
+    <requirements-tracking-combination>
+        <attr-value attribute="UserRole_1" value="1"/>
+        <requirement ID="Do1.Id1"/>
+    </requirements-tracking-combination>
+    <requirements-tracking-combination>
+        <attr-value attribute="UserRole_1" value="2"/>
+        <requirement ID="Do1.Id1"/>
+    </requirements-tracking-combination>
+    <requirements-tracking-combination>
+        <attr-value attribute="UserRole_1" value="3"/>
+        <requirement ID="Do1.Id1"/>
+    </requirements-tracking-combination>
+    <requirements-tracking-combination>
+        <attr-value attribute="UserRole_1" value="TestVal12"/>
+        <requirement ID="Do1.Id1"/>
+    </requirements-tracking-combination>
+    <requirements-tracking-combination>
+        <attr-value attribute="UserRole_1" value="TestVal12_1"/>
+        <requirement ID="Do1.Id1"/>
+    </requirements-tracking-combination>
+    <requirements-collection>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="Do1" Keywords="" Ranking="0" RequirementDescription="" RequirementId="Id1" Restrictions=""/>
+    </requirements-collection>
+    <coverage-reqs-sets defaultCoverageRequirementsSet="">
+        <coverage-reqs-set description="Imported from Rel 5.4_IQP_Regression_Users: Imported from Rel 5.4_IQP Regression" name="IQP Regression_1_1">
+            <coverage-req>
+                <attribute name="UserRole"/>
+                <attribute name="AddUser"/>
+                <attribute name="EditUser"/>
+                <attribute name="DeleteUser"/>
+                <coverage-goal coverage-goal-val="2"/>
+            </coverage-req>
+        </coverage-reqs-set>
+    </coverage-reqs-sets>
+    <neg-coverage-reqs-sets defaultCoverageRequirementsSet="SingleNegativeCoverageRequirementsSet" isAutoNegCoverageRequirements="true">
+        <coverage-reqs-set description="" name="SingleNegativeCoverageRequirementsSet">
+            <coverage-req>
+                <coverage-goal coverage-goal-val="1"/>
+                <negative-attribute-combination>
+                    <attribute name="DummayName"/>
+                </negative-attribute-combination>
+            </coverage-req>
+            <coverage-req>
+                <coverage-goal coverage-goal-val="1"/>
+                <negative-attribute-combination>
+                    <attribute name="UserRole_1"/>
+                </negative-attribute-combination>
+            </coverage-req>
+        </coverage-reqs-set>
+    </neg-coverage-reqs-sets>
+    <focus-ctd-decoration decorationName="Android-Native" decorationType="cucumberDecoration" isActiveDecoration="false"/>
+    <focus-ctd-decoration decorationName="Web" decorationType="cucumberDecoration" isActiveDecoration="false">
+        <focus-ctd-trigger appliance="FIRST_TEST" is_or="false" name="UserMenu" negative="false" suppressNewLine="false" triggerType="Feature">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Validate Users Menu"/>
+            </focus-ctd-single-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="To validate user menu." negative="false" suppressNewLine="false" triggerType="Scenario">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Scenario to validate users menu from IQP main menu&lt;test_number&gt;"/>
+            </focus-ctd-single-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="Steps to validate users menu" negative="false" suppressNewLine="false" triggerType="Steps">
+            <focus-ctd-cucumber-steps-template>
+                <cucumber-step actionName="navigateTo" additionalInfo="" category="NavigationalCategory" stepType="Given">
+                    <focus-ctd-template text="I navigate to &quot;(URL)&quot;"/>
+                    <actionParameter data="&quot;(URL)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="populateTextField" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I enter into input field &quot;[Username]&quot; the value &quot;(Username)&quot;"/>
+                    <actionParameter data="&quot;[Username]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;(Username)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="populateTextField" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I enter into input field &quot;[Password]&quot; the value &quot;(Password)&quot;"/>
+                    <actionParameter data="&quot;[Password]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;(Password)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickButton" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[SignIn]&quot; button"/>
+                    <actionParameter data="&quot;[SignIn]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="captureScreenshot" additionalInfo="" category="CaptureScreenShotCategory" stepType="And">
+                    <focus-ctd-template text="I take screenshot"/>
+                </cucumber-step>
+                <cucumber-step actionName="addWaitSeconds" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I add wait seconds of &quot;20&quot;"/>
+                    <actionParameter data="&quot;20&quot;" dataSource="Literal"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[Menu Bar]&quot; link"/>
+                    <actionParameter data="&quot;[Menu Bar]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickButton" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[UsersMenu]&quot; button"/>
+                    <actionParameter data="&quot;[UsersMenu]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickButton" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[AddNewUser]&quot; button"/>
+                    <actionParameter data="&quot;[AddNewUser]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="populateTextField" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I enter into input field &quot;[UserName]&quot; the value &quot;(UserNameToCreate)&quot;"/>
+                    <actionParameter data="&quot;[UserName]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;(UserNameToCreate)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="populateTextField" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I enter into input field &quot;[EmailID]&quot; the value &quot;(EmailIDToCreate)&quot;"/>
+                    <actionParameter data="&quot;[EmailID]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;(EmailIDToCreate)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="populateTextField" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I enter into input field &quot;[UserID]&quot; the value &quot;(UserIDToCreate)&quot;"/>
+                    <actionParameter data="&quot;[UserID]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;(UserIDToCreate)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="selectCheckBox" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I check the checkbox &quot;[Admin]&quot;"/>
+                    <actionParameter data="&quot;[Admin]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="selectDropDownByPosition" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I select from dropdown &quot;[Portfolio]&quot; the item &quot;62&quot;"/>
+                    <actionParameter data="&quot;[Portfolio]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;62&quot;" dataSource="Literal"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickButton" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[Next]&quot; button"/>
+                    <actionParameter data="&quot;[Next]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickButton" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[CreateUser]&quot; button"/>
+                    <actionParameter data="&quot;[CreateUser]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickButton" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[sdfs]&quot; button"/>
+                    <actionParameter data="&quot;[sdfs]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="populateTextField" additionalInfo="~tg~" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I enter into input field &quot;[hfgh]&quot; the value &quot;jfjfjfj&quot;"/>
+                    <actionParameter data="&quot;[hfgh]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;jfjfjfj&quot;" dataSource="Literal"/>
+                </cucumber-step>
+            </focus-ctd-cucumber-steps-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="step_3" negative="false" suppressNewLine="false" triggerType="Steps">
+            <focus-ctd-cucumber-steps-template>
+                <cucumber-step actionName="navigateTo" additionalInfo="" category="NavigationalCategory" stepType="Given">
+                    <focus-ctd-template text="I navigate to &quot;(url)&quot;"/>
+                    <actionParameter data="&quot;(url)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:.//div[@id='tsuid_AOUoaO7jJbGhnesPwNfgqQE_45']/span[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]~CTD~axpath:html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]~CTD~css:.TVMOhf.n2lgG.RXADTd" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[English &amp; Hindi]&quot; link"/>
+                    <actionParameter data="&quot;[English &amp; Hindi]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:.//div[@id='tsuid_AOUoaO7jJbGhnesPwNfgqQE_45']/span[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/span[1]~CTD~axpath:html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/span[1]~CTD~dxpath:.//span[contains(text(),'check')]~CTD~css:.wqLW9c.pb3iw.RES9jf" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[check]&quot; link"/>
+                    <actionParameter data="&quot;[check]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:.//span[@id='_AOUoaO7jJbGhnesPwNfgqQE_67']/div[1]/a[1]/div[1]/div[1]/div[1]~CTD~axpath:html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1]/div[1]/a[1]/div[1]/div[1]/div[1]~CTD~dxpath:.//div[contains(text(),'What's the meaning of &quot;check and check&quot;?...')]~CTD~css:.hyYc0c" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[What's the meaning of &quot;check and check&quot;?...]&quot; link"/>
+                    <actionParameter data="&quot;[What's the meaning of &quot;check and check&quot;?...]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:.//shreddit-post[@id='t3_zluhg3']/div[4]/span[1]~CTD~axpath:html[1]/body[1]/shreddit-app[1]/div[3]/div[1]/div[1]/main[1]/shreddit-post[1]/div[4]/span[1]~CTD~css:.flex.flex-row.col-start-1.col-end-4.items-center.text-16.m-md.xs:mx-0.px-md.py-xs.min-h-[56px].box-border.rounded-sm.border-sm.border-neutral-border-weak.border-solid.text-secondary-weak" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[Archived post. New comments cannot be posted and votes cannot be cast.]&quot; link"/>
+                    <actionParameter data="&quot;[Archived post. New comments cannot be posted and votes cannot be cast.]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:.//shreddit-post[@id='t3_zluhg3']/div[4]/span[1]/span[1]~CTD~axpath:html[1]/body[1]/shreddit-app[1]/div[3]/div[1]/div[1]/main[1]/shreddit-post[1]/div[4]/span[1]/span[1]~CTD~dxpath:.//span[contains(text(),' Archived post. New comments cannot be posted and votes cannot be cast. ')]~CTD~css:.flex.flex-auto.flex-col.justify-center.text-14.pl-sm" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[Archived post. New comments cannot be posted and votes cannot be cast.]&quot; link"/>
+                    <actionParameter data="&quot;[Archived post. New comments cannot be posted and votes cannot be cast.]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:html[1]/body[1]/shreddit-app[1]/reddit-header-large[1]/reddit-header-action-items[1]/header[1]/nav[1]/div[2]/div[1]/div[1]/search-dynamic-id-cache-controller[1]/reddit-search-large[1]~CTD~axpath:html[1]/body[1]/shreddit-app[1]/reddit-header-large[1]/reddit-header-action-items[1]/header[1]/nav[1]/div[2]/div[1]/div[1]/search-dynamic-id-cache-controller[1]/reddit-search-large[1]~CTD~css:.nd:visible.w-[inherit].translate-x-0.max-w-[750px].w-full" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[element_1]&quot; link"/>
+                    <actionParameter data="&quot;[element_1]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:html[1]/body[1]/shreddit-app[1]/reddit-header-large[1]/reddit-header-action-items[1]/header[1]/nav[1]/div[2]/div[1]/div[1]/search-dynamic-id-cache-controller[1]/reddit-search-large[1]~CTD~axpath:html[1]/body[1]/shreddit-app[1]/reddit-header-large[1]/reddit-header-action-items[1]/header[1]/nav[1]/div[2]/div[1]/div[1]/search-dynamic-id-cache-controller[1]/reddit-search-large[1]~CTD~css:.nd:visible.w-[inherit].translate-x-0.max-w-[750px].w-full" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[element_2]&quot; link"/>
+                    <actionParameter data="&quot;[element_2]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:html[1]/body[1]/shreddit-app[1]/reddit-header-large[1]/reddit-header-action-items[1]/header[1]/nav[1]/div[2]/div[1]/div[1]/search-dynamic-id-cache-controller[1]/reddit-search-large[1]~CTD~axpath:html[1]/body[1]/shreddit-app[1]/reddit-header-large[1]/reddit-header-action-items[1]/header[1]/nav[1]/div[2]/div[1]/div[1]/search-dynamic-id-cache-controller[1]/reddit-search-large[1]~CTD~css:.nd:visible.w-[inherit].translate-x-0.max-w-[750px].w-full" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[element_3]&quot; link"/>
+                    <actionParameter data="&quot;[element_3]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+            </focus-ctd-cucumber-steps-template>
+        </focus-ctd-trigger>
+    </focus-ctd-decoration>
+    <focus-ctd-decoration decorationName="iOS-Hybrid" decorationType="cucumberDecoration" isActiveDecoration="false"/>
+    <focus-ctd-decoration decorationName="iOS-Native" decorationType="cucumberDecoration" isActiveDecoration="false"/>
+    <focus-ctd-decoration decorationName="API-Spanish" decorationType="cucumberDecoration" isActiveDecoration="false">
+        <focus-ctd-trigger appliance="FIRST_TEST" is_or="false" name="UserMenu" negative="false" suppressNewLine="false" triggerType="Feature">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Validate Users Menu"/>
+            </focus-ctd-single-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="To validate user menu." negative="false" suppressNewLine="false" triggerType="Scenario">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Scenario to validate users menu from IQP main menu&lt;test_number&gt;"/>
+            </focus-ctd-single-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="Steps to validate users menu" negative="false" suppressNewLine="false" triggerType="Steps">
+            <focus-ctd-cucumber-steps-template>
+                <cucumber-step actionName="navigateTo" additionalInfo="" category="NavigationalCategory" stepType="Given">
+                    <focus-ctd-template text="I navigate to &quot;(URL)&quot;"/>
+                    <actionParameter data="&quot;(URL)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="populateTextField" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I enter into input field &quot;[Username]&quot; the value &quot;(Username)&quot;"/>
+                    <actionParameter data="&quot;[Username]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;(Username)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="populateTextField" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I enter into input field &quot;[Password]&quot; the value &quot;(Password)&quot;"/>
+                    <actionParameter data="&quot;[Password]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;(Password)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickButton" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[SignIn]&quot; button"/>
+                    <actionParameter data="&quot;[SignIn]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="captureScreenshot" additionalInfo="" category="CaptureScreenShotCategory" stepType="And">
+                    <focus-ctd-template text="I take screenshot"/>
+                </cucumber-step>
+                <cucumber-step actionName="addWaitSeconds" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I add wait seconds of &quot;20&quot;"/>
+                    <actionParameter data="&quot;20&quot;" dataSource="Literal"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[Menu Bar]&quot; link"/>
+                    <actionParameter data="&quot;[Menu Bar]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickButton" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[UsersMenu]&quot; button"/>
+                    <actionParameter data="&quot;[UsersMenu]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickButton" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[AddNewUser]&quot; button"/>
+                    <actionParameter data="&quot;[AddNewUser]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="populateTextField" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I enter into input field &quot;[UserName]&quot; the value &quot;(UserNameToCreate)&quot;"/>
+                    <actionParameter data="&quot;[UserName]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;(UserNameToCreate)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="populateTextField" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I enter into input field &quot;[EmailID]&quot; the value &quot;(EmailIDToCreate)&quot;"/>
+                    <actionParameter data="&quot;[EmailID]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;(EmailIDToCreate)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="populateTextField" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I enter into input field &quot;[UserID]&quot; the value &quot;(UserIDToCreate)&quot;"/>
+                    <actionParameter data="&quot;[UserID]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;(UserIDToCreate)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="selectCheckBox" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I check the checkbox &quot;[Admin]&quot;"/>
+                    <actionParameter data="&quot;[Admin]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="selectDropDownByPosition" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I select from dropdown &quot;[Portfolio]&quot; the item &quot;62&quot;"/>
+                    <actionParameter data="&quot;[Portfolio]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;62&quot;" dataSource="Literal"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickButton" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[Next]&quot; button"/>
+                    <actionParameter data="&quot;[Next]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickButton" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[CreateUser]&quot; button"/>
+                    <actionParameter data="&quot;[CreateUser]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickButton" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[sdfs]&quot; button"/>
+                    <actionParameter data="&quot;[sdfs]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="populateTextField" additionalInfo="~tg~" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I enter into input field &quot;[hfgh]&quot; the value &quot;jfjfjfj&quot;"/>
+                    <actionParameter data="&quot;[hfgh]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;jfjfjfj&quot;" dataSource="Literal"/>
+                </cucumber-step>
+            </focus-ctd-cucumber-steps-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="step_3" negative="false" suppressNewLine="false" triggerType="Steps">
+            <focus-ctd-cucumber-steps-template>
+                <cucumber-step actionName="navigateTo" additionalInfo="" category="NavigationalCategory" stepType="Given">
+                    <focus-ctd-template text="I navigate to &quot;(url)&quot;"/>
+                    <actionParameter data="&quot;(url)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:.//div[@id='tsuid_AOUoaO7jJbGhnesPwNfgqQE_45']/span[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]~CTD~axpath:html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]~CTD~css:.TVMOhf.n2lgG.RXADTd" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[English &amp; Hindi]&quot; link"/>
+                    <actionParameter data="&quot;[English &amp; Hindi]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:.//div[@id='tsuid_AOUoaO7jJbGhnesPwNfgqQE_45']/span[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/span[1]~CTD~axpath:html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/span[1]~CTD~dxpath:.//span[contains(text(),'check')]~CTD~css:.wqLW9c.pb3iw.RES9jf" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[check]&quot; link"/>
+                    <actionParameter data="&quot;[check]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:.//span[@id='_AOUoaO7jJbGhnesPwNfgqQE_67']/div[1]/a[1]/div[1]/div[1]/div[1]~CTD~axpath:html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1]/div[1]/a[1]/div[1]/div[1]/div[1]~CTD~dxpath:.//div[contains(text(),'What's the meaning of &quot;check and check&quot;?...')]~CTD~css:.hyYc0c" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[What's the meaning of &quot;check and check&quot;?...]&quot; link"/>
+                    <actionParameter data="&quot;[What's the meaning of &quot;check and check&quot;?...]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:.//shreddit-post[@id='t3_zluhg3']/div[4]/span[1]~CTD~axpath:html[1]/body[1]/shreddit-app[1]/div[3]/div[1]/div[1]/main[1]/shreddit-post[1]/div[4]/span[1]~CTD~css:.flex.flex-row.col-start-1.col-end-4.items-center.text-16.m-md.xs:mx-0.px-md.py-xs.min-h-[56px].box-border.rounded-sm.border-sm.border-neutral-border-weak.border-solid.text-secondary-weak" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[Archived post. New comments cannot be posted and votes cannot be cast.]&quot; link"/>
+                    <actionParameter data="&quot;[Archived post. New comments cannot be posted and votes cannot be cast.]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:.//shreddit-post[@id='t3_zluhg3']/div[4]/span[1]/span[1]~CTD~axpath:html[1]/body[1]/shreddit-app[1]/div[3]/div[1]/div[1]/main[1]/shreddit-post[1]/div[4]/span[1]/span[1]~CTD~dxpath:.//span[contains(text(),' Archived post. New comments cannot be posted and votes cannot be cast. ')]~CTD~css:.flex.flex-auto.flex-col.justify-center.text-14.pl-sm" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[Archived post. New comments cannot be posted and votes cannot be cast.]&quot; link"/>
+                    <actionParameter data="&quot;[Archived post. New comments cannot be posted and votes cannot be cast.]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:html[1]/body[1]/shreddit-app[1]/reddit-header-large[1]/reddit-header-action-items[1]/header[1]/nav[1]/div[2]/div[1]/div[1]/search-dynamic-id-cache-controller[1]/reddit-search-large[1]~CTD~axpath:html[1]/body[1]/shreddit-app[1]/reddit-header-large[1]/reddit-header-action-items[1]/header[1]/nav[1]/div[2]/div[1]/div[1]/search-dynamic-id-cache-controller[1]/reddit-search-large[1]~CTD~css:.nd:visible.w-[inherit].translate-x-0.max-w-[750px].w-full" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[element_1]&quot; link"/>
+                    <actionParameter data="&quot;[element_1]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:html[1]/body[1]/shreddit-app[1]/reddit-header-large[1]/reddit-header-action-items[1]/header[1]/nav[1]/div[2]/div[1]/div[1]/search-dynamic-id-cache-controller[1]/reddit-search-large[1]~CTD~axpath:html[1]/body[1]/shreddit-app[1]/reddit-header-large[1]/reddit-header-action-items[1]/header[1]/nav[1]/div[2]/div[1]/div[1]/search-dynamic-id-cache-controller[1]/reddit-search-large[1]~CTD~css:.nd:visible.w-[inherit].translate-x-0.max-w-[750px].w-full" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[element_2]&quot; link"/>
+                    <actionParameter data="&quot;[element_2]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:html[1]/body[1]/shreddit-app[1]/reddit-header-large[1]/reddit-header-action-items[1]/header[1]/nav[1]/div[2]/div[1]/div[1]/search-dynamic-id-cache-controller[1]/reddit-search-large[1]~CTD~axpath:html[1]/body[1]/shreddit-app[1]/reddit-header-large[1]/reddit-header-action-items[1]/header[1]/nav[1]/div[2]/div[1]/div[1]/search-dynamic-id-cache-controller[1]/reddit-search-large[1]~CTD~css:.nd:visible.w-[inherit].translate-x-0.max-w-[750px].w-full" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[element_3]&quot; link"/>
+                    <actionParameter data="&quot;[element_3]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+            </focus-ctd-cucumber-steps-template>
+        </focus-ctd-trigger>
+    </focus-ctd-decoration>
+    <focus-ctd-decoration decorationName="DefaultTestCaseNameDecoration" decorationType="testCaseName" isActiveDecoration="false"/>
+    <focus-ctd-decoration decorationName="DefaultFreeStyleDecoration" decorationType="freeStyle" isActiveDecoration="false"/>
+    <focus-ctd-decoration decorationName="Mobile-Web" decorationType="cucumberDecoration" isActiveDecoration="false"/>
+    <focus-ctd-decoration decorationName="DefaultCucumberDecoration" decorationType="cucumberDecoration" isActiveDecoration="false"/>
+    <focus-ctd-decoration decorationName="DefaultStructuredDecoration" decorationType="structuredDecoration" isActiveDecoration="true">
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="T1" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="User should have a valid UN and PWD"/>
+            </focus-ctd-single-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="T3" negative="false" suppressNewLine="false" triggerType="Test_Case_Description">
+            <requirement ID="Do1.Id1"/>
+            <focus-ctd-single-template>
+                <focus-ctd-template text="This is to test a User Story &lt;test_number&gt;"/>
+            </focus-ctd-single-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="T2" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="Enter UN and PW and click on Sign In&lt;test_number&gt;"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="User should be navigated to Login page &lt;test_number&gt;"/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="T4" negative="false" suppressNewLine="false" triggerType="Test_Case_Name">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Verify Login Functionality &lt;test_number&gt;"/>
+            </focus-ctd-single-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="T2_1" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="Click on Search and enter Phone in the searchbox&lt;test_number&gt;"/>
+                    <focus-ctd-template text="&lt;test_number&gt;"/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The results of phone should be displayed &lt;test_number&gt;"/>
+                    <focus-ctd-template text="&lt;test_number&gt;"/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+        </focus-ctd-trigger>
+    </focus-ctd-decoration>
+    <focus-ctd-decoration decorationName="Android-Hybrid" decorationType="cucumberDecoration" isActiveDecoration="false"/>
+    <focus-ctd-decoration decorationName="Webservices-Kannada" decorationType="cucumberDecoration" isActiveDecoration="false">
+        <focus-ctd-trigger appliance="FIRST_TEST" is_or="false" name="UserMenu" negative="false" suppressNewLine="false" triggerType="Feature">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Validate Users Menu"/>
+            </focus-ctd-single-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="To validate user menu." negative="false" suppressNewLine="false" triggerType="Scenario">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Scenario to validate users menu from IQP main menu&lt;test_number&gt;"/>
+            </focus-ctd-single-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="Steps to validate users menu" negative="false" suppressNewLine="false" triggerType="Steps">
+            <focus-ctd-cucumber-steps-template>
+                <cucumber-step actionName="navigateTo" additionalInfo="" category="NavigationalCategory" stepType="Given">
+                    <focus-ctd-template text="I navigate to &quot;(URL)&quot;"/>
+                    <actionParameter data="&quot;(URL)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="populateTextField" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I enter into input field &quot;[Username]&quot; the value &quot;(Username)&quot;"/>
+                    <actionParameter data="&quot;[Username]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;(Username)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="populateTextField" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I enter into input field &quot;[Password]&quot; the value &quot;(Password)&quot;"/>
+                    <actionParameter data="&quot;[Password]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;(Password)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickButton" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[SignIn]&quot; button"/>
+                    <actionParameter data="&quot;[SignIn]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="captureScreenshot" additionalInfo="" category="CaptureScreenShotCategory" stepType="And">
+                    <focus-ctd-template text="I take screenshot"/>
+                </cucumber-step>
+                <cucumber-step actionName="addWaitSeconds" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I add wait seconds of &quot;20&quot;"/>
+                    <actionParameter data="&quot;20&quot;" dataSource="Literal"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[Menu Bar]&quot; link"/>
+                    <actionParameter data="&quot;[Menu Bar]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickButton" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[UsersMenu]&quot; button"/>
+                    <actionParameter data="&quot;[UsersMenu]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickButton" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[AddNewUser]&quot; button"/>
+                    <actionParameter data="&quot;[AddNewUser]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="populateTextField" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I enter into input field &quot;[UserName]&quot; the value &quot;(UserNameToCreate)&quot;"/>
+                    <actionParameter data="&quot;[UserName]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;(UserNameToCreate)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="populateTextField" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I enter into input field &quot;[EmailID]&quot; the value &quot;(EmailIDToCreate)&quot;"/>
+                    <actionParameter data="&quot;[EmailID]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;(EmailIDToCreate)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="populateTextField" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I enter into input field &quot;[UserID]&quot; the value &quot;(UserIDToCreate)&quot;"/>
+                    <actionParameter data="&quot;[UserID]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;(UserIDToCreate)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="selectCheckBox" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I check the checkbox &quot;[Admin]&quot;"/>
+                    <actionParameter data="&quot;[Admin]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="selectDropDownByPosition" additionalInfo="" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I select from dropdown &quot;[Portfolio]&quot; the item &quot;62&quot;"/>
+                    <actionParameter data="&quot;[Portfolio]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;62&quot;" dataSource="Literal"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickButton" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[Next]&quot; button"/>
+                    <actionParameter data="&quot;[Next]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickButton" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[CreateUser]&quot; button"/>
+                    <actionParameter data="&quot;[CreateUser]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickButton" additionalInfo="" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[sdfs]&quot; button"/>
+                    <actionParameter data="&quot;[sdfs]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="populateTextField" additionalInfo="~tg~" category="InputTypeCategory" stepType="And">
+                    <focus-ctd-template text="I enter into input field &quot;[hfgh]&quot; the value &quot;jfjfjfj&quot;"/>
+                    <actionParameter data="&quot;[hfgh]&quot;" dataSource="UIControl"/>
+                    <actionParameter data="&quot;jfjfjfj&quot;" dataSource="Literal"/>
+                </cucumber-step>
+            </focus-ctd-cucumber-steps-template>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="step_3" negative="false" suppressNewLine="false" triggerType="Steps">
+            <focus-ctd-cucumber-steps-template>
+                <cucumber-step actionName="navigateTo" additionalInfo="" category="NavigationalCategory" stepType="Given">
+                    <focus-ctd-template text="I navigate to &quot;(url)&quot;"/>
+                    <actionParameter data="&quot;(url)&quot;" dataSource="ExternalData"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:.//div[@id='tsuid_AOUoaO7jJbGhnesPwNfgqQE_45']/span[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]~CTD~axpath:html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]~CTD~css:.TVMOhf.n2lgG.RXADTd" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[English &amp; Hindi]&quot; link"/>
+                    <actionParameter data="&quot;[English &amp; Hindi]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:.//div[@id='tsuid_AOUoaO7jJbGhnesPwNfgqQE_45']/span[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/span[1]~CTD~axpath:html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/span[1]~CTD~dxpath:.//span[contains(text(),'check')]~CTD~css:.wqLW9c.pb3iw.RES9jf" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[check]&quot; link"/>
+                    <actionParameter data="&quot;[check]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:.//span[@id='_AOUoaO7jJbGhnesPwNfgqQE_67']/div[1]/a[1]/div[1]/div[1]/div[1]~CTD~axpath:html[1]/body[1]/div[3]/div[1]/div[12]/div[1]/div[2]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1]/div[1]/a[1]/div[1]/div[1]/div[1]~CTD~dxpath:.//div[contains(text(),'What's the meaning of &quot;check and check&quot;?...')]~CTD~css:.hyYc0c" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[What's the meaning of &quot;check and check&quot;?...]&quot; link"/>
+                    <actionParameter data="&quot;[What's the meaning of &quot;check and check&quot;?...]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:.//shreddit-post[@id='t3_zluhg3']/div[4]/span[1]~CTD~axpath:html[1]/body[1]/shreddit-app[1]/div[3]/div[1]/div[1]/main[1]/shreddit-post[1]/div[4]/span[1]~CTD~css:.flex.flex-row.col-start-1.col-end-4.items-center.text-16.m-md.xs:mx-0.px-md.py-xs.min-h-[56px].box-border.rounded-sm.border-sm.border-neutral-border-weak.border-solid.text-secondary-weak" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[Archived post. New comments cannot be posted and votes cannot be cast.]&quot; link"/>
+                    <actionParameter data="&quot;[Archived post. New comments cannot be posted and votes cannot be cast.]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:.//shreddit-post[@id='t3_zluhg3']/div[4]/span[1]/span[1]~CTD~axpath:html[1]/body[1]/shreddit-app[1]/div[3]/div[1]/div[1]/main[1]/shreddit-post[1]/div[4]/span[1]/span[1]~CTD~dxpath:.//span[contains(text(),' Archived post. New comments cannot be posted and votes cannot be cast. ')]~CTD~css:.flex.flex-auto.flex-col.justify-center.text-14.pl-sm" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[Archived post. New comments cannot be posted and votes cannot be cast.]&quot; link"/>
+                    <actionParameter data="&quot;[Archived post. New comments cannot be posted and votes cannot be cast.]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:html[1]/body[1]/shreddit-app[1]/reddit-header-large[1]/reddit-header-action-items[1]/header[1]/nav[1]/div[2]/div[1]/div[1]/search-dynamic-id-cache-controller[1]/reddit-search-large[1]~CTD~axpath:html[1]/body[1]/shreddit-app[1]/reddit-header-large[1]/reddit-header-action-items[1]/header[1]/nav[1]/div[2]/div[1]/div[1]/search-dynamic-id-cache-controller[1]/reddit-search-large[1]~CTD~css:.nd:visible.w-[inherit].translate-x-0.max-w-[750px].w-full" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[element_1]&quot; link"/>
+                    <actionParameter data="&quot;[element_1]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:html[1]/body[1]/shreddit-app[1]/reddit-header-large[1]/reddit-header-action-items[1]/header[1]/nav[1]/div[2]/div[1]/div[1]/search-dynamic-id-cache-controller[1]/reddit-search-large[1]~CTD~axpath:html[1]/body[1]/shreddit-app[1]/reddit-header-large[1]/reddit-header-action-items[1]/header[1]/nav[1]/div[2]/div[1]/div[1]/search-dynamic-id-cache-controller[1]/reddit-search-large[1]~CTD~css:.nd:visible.w-[inherit].translate-x-0.max-w-[750px].w-full" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[element_2]&quot; link"/>
+                    <actionParameter data="&quot;[element_2]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+                <cucumber-step actionName="clickLink" additionalInfo="xpath:html[1]/body[1]/shreddit-app[1]/reddit-header-large[1]/reddit-header-action-items[1]/header[1]/nav[1]/div[2]/div[1]/div[1]/search-dynamic-id-cache-controller[1]/reddit-search-large[1]~CTD~axpath:html[1]/body[1]/shreddit-app[1]/reddit-header-large[1]/reddit-header-action-items[1]/header[1]/nav[1]/div[2]/div[1]/div[1]/search-dynamic-id-cache-controller[1]/reddit-search-large[1]~CTD~css:.nd:visible.w-[inherit].translate-x-0.max-w-[750px].w-full" category="ElementClickCategory" stepType="And">
+                    <focus-ctd-template text="I click on &quot;[element_3]&quot; link"/>
+                    <actionParameter data="&quot;[element_3]&quot;" dataSource="UIControl"/>
+                </cucumber-step>
+            </focus-ctd-cucumber-steps-template>
+        </focus-ctd-trigger>
+    </focus-ctd-decoration>
+    <defaultParentDetails parentDetailsApplicationName="" parentDetailsFunctionality="" parentDetailsModel="" parentDetailsModelTag="" parentDetailsPortfolio="" parentDetailsTenantId="" parentDetailsUsername=""/>
+    <deactivates/>
+    <attrs-to-delete/>
+    <pool_comments>
+        <pool_comment key="05e62b7f-21b4-41df-93b2-35743399eb44" value="{&quot;name&quot;:&quot;EditUser&quot;,&quot;version&quot;:&quot;1&quot;}"/>
+        <pool_comment key="0d1a5507-3b93-4c53-aef8-2fc53c47a697" value="{&quot;name&quot;:&quot;UserRole&quot;,&quot;version&quot;:&quot;2&quot;}"/>
+        <pool_comment key="bc77a185-4aca-4549-b800-caf6b484ccd0" value="{&quot;name&quot;:&quot;AddUser&quot;,&quot;version&quot;:&quot;2&quot;}"/>
+        <pool_comment key="3b211084-8d45-42ed-a047-144a2607dec7" value="{&quot;name&quot;:&quot;DeleteUser&quot;,&quot;version&quot;:&quot;1&quot;}"/>
+        <pool_comment key="eac12478-de52-4aa0-ae6b-559dee989436" value="{&quot;name&quot;:&quot;UserRole_1&quot;,&quot;version&quot;:&quot;1&quot;}"/>
+        <pool_comment key="3d826326-7c64-4c1a-8f63-183b0145f2a3" value="{&quot;name&quot;:&quot;DummayName&quot;,&quot;version&quot;:&quot;1&quot;}"/>
+    </pool_comments>
+    <db-dependencies/>
+    <focus-ctd-model-sync>
+        <focus-ctd-model-sync-mult/>
+        <focus-ctd-model-sync-na/>
+    </focus-ctd-model-sync>
+</focus-model>
