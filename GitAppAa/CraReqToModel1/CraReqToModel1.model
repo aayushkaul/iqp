@@ -1,0 +1,1070 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE focus-model [
+]>
+<!--Model Created from Reqode--><focus-model auxDataFilesFolder="" classifyAttributesEnabled="false" frea_ai_smart_comment="" inputOutput="false" manual="true">
+    <model-identification modelTag="@GitAppAa @1.0 @GitAppAa_Models @GenAI_generated">
+        <model-identification-field name="Application Name" partOfTag="true" value="GitAppAa"/>
+        <model-identification-field name="Application code version #" partOfTag="true" value="1.0"/>
+        <model-identification-field name="Application Function" partOfTag="true" value="GitAppAa_Models"/>
+        <model-identification-field name="Updated Reason" partOfTag="false" value="New Model"/>
+        <model-identification-field name="Created By" partOfTag="false" value="rgtmp_aayush.kaul"/>
+        <model-identification-field name="Created Date and Time" partOfTag="false" value="11 Aug 2025 06:31:49"/>
+        <model-identification-field name="Updated By" partOfTag="false" value="aayush.kaul"/>
+        <model-identification-field name="Updated Date and Time" partOfTag="false" value="12 Aug 2025 14:40:16"/>
+        <model-identification-field name="Application Sub Function" partOfTag="true" value="GenAI_generated"/>
+        <model-identification-field name="Test Stage" partOfTag="false" value=""/>
+        <model-identification-field name="Criticality" partOfTag="false" value=""/>
+        <model-identification-field name="Project" partOfTag="false" value=""/>
+        <model-identification-field name="Epic" partOfTag="false" value=""/>
+        <model-identification-field name="Feature" partOfTag="false" value=""/>
+        <model-identification-field name="User Story" partOfTag="false" value=""/>
+        <model-identification-field name="Use attribute pool" partOfTag="false" value="false"/>
+    </model-identification>
+    <attribute attr_class="NONE" dependencies="false" description="" group="" iotype="NEITHER" name="usertype" parentDetailsApplicationName="" parentDetailsFunctionality="" parentDetailsModel="" parentDetailsModelTag="@GitAppAa @1.0 @GitAppAa_Models @GenAI_generated" parentDetailsPortfolio="" parentDetailsTenantId="" parentDetailsUsername="" poolId="" revision="" type="STRING">
+        <value name="guest" neg-value="false" weight="1"/>
+        <value name="registered" neg-value="false" weight="1"/>
+        <value name="unknown" neg-value="true" weight="1"/>
+        <requirement ID="xsp_24"/>
+        <requirement ID="xsp_25"/>
+    </attribute>
+    <attribute attr_class="NONE" dependencies="false" description="" group="" iotype="NEITHER" name="homepageversion" parentDetailsApplicationName="" parentDetailsFunctionality="" parentDetailsModel="" parentDetailsModelTag="@GitAppAa @1.0 @GitAppAa_Models @GenAI_generated" parentDetailsPortfolio="" parentDetailsTenantId="" parentDetailsUsername="" poolId="" revision="" type="STRING">
+        <value name="versiona" neg-value="false" weight="1"/>
+        <value name="versionb" neg-value="false" weight="1"/>
+        <value name="invalid" neg-value="true" weight="1"/>
+        <requirement ID="xsp_23"/>
+        <requirement ID="xsp_24"/>
+    </attribute>
+    <attribute attr_class="NONE" dependencies="false" description="" group="" iotype="NEITHER" name="accountprofilevisibility" parentDetailsApplicationName="" parentDetailsFunctionality="" parentDetailsModel="" parentDetailsModelTag="@GitAppAa @1.0 @GitAppAa_Models @GenAI_generated" parentDetailsPortfolio="" parentDetailsTenantId="" parentDetailsUsername="" poolId="" revision="" type="STRING">
+        <value name="visible" neg-value="false" weight="1"/>
+        <value name="notvisible" neg-value="false" weight="1"/>
+        <value name="hidden" neg-value="true" weight="1"/>
+        <requirement ID="xsp_25"/>
+    </attribute>
+    <attribute attr_class="NONE" dependencies="false" description="" group="" iotype="NEITHER" name="editdetailsoption" parentDetailsApplicationName="" parentDetailsFunctionality="" parentDetailsModel="" parentDetailsModelTag="@GitAppAa @1.0 @GitAppAa_Models @GenAI_generated" parentDetailsPortfolio="" parentDetailsTenantId="" parentDetailsUsername="" poolId="" revision="" type="STRING">
+        <value name="available" neg-value="false" weight="1"/>
+        <value name="notavailable" neg-value="false" weight="1"/>
+        <value name="unavailable" neg-value="true" weight="1"/>
+        <requirement ID="xsp_25"/>
+    </attribute>
+    <attribute attr_class="NONE" dependencies="false" description="" group="" iotype="NEITHER" name="paymentmethod" parentDetailsApplicationName="" parentDetailsFunctionality="" parentDetailsModel="" parentDetailsModelTag="@GitAppAa @1.0 @GitAppAa_Models @GenAI_generated" parentDetailsPortfolio="" parentDetailsTenantId="" parentDetailsUsername="" poolId="" revision="" type="STRING">
+        <value name="creditcard" neg-value="false" weight="1"/>
+        <value name="paypal" neg-value="false" weight="1"/>
+        <value name="invalid" neg-value="true" weight="1"/>
+        <requirement ID="xsp_22"/>
+    </attribute>
+    <restriction expression="!(usertype.equals(&quot;guest&quot;)) || homepageversion.equals(&quot;versiona&quot;)" group="" groupedExpression="!(usertype.equals(&quot;guest&quot;)) || homepageversion.equals(&quot;versiona&quot;)" iff="false" isActive="true" isAutoGenerated="false" name="" type="If-Then">
+        <requirement ID="xsp_24"/>
+        <if-expr is_or="true">
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="guest"/>
+            </focus-ctd-cond>
+        </if-expr>
+        <then-expr is_or="true">
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+        </then-expr>
+    </restriction>
+    <restriction expression="!(usertype.equals(&quot;registered&quot;)) || homepageversion.equals(&quot;versionb&quot;)" group="" groupedExpression="!(usertype.equals(&quot;registered&quot;)) || homepageversion.equals(&quot;versionb&quot;)" iff="false" isActive="true" isAutoGenerated="false" name="" type="If-Then">
+        <requirement ID="xsp_23"/>
+        <if-expr is_or="true">
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="registered"/>
+            </focus-ctd-cond>
+        </if-expr>
+        <then-expr is_or="true">
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versionb"/>
+            </focus-ctd-cond>
+        </then-expr>
+    </restriction>
+    <restriction expression="!(accountprofilevisibility.equals(&quot;visible&quot;)) || editdetailsoption.equals(&quot;available&quot;)" group="" groupedExpression="!(accountprofilevisibility.equals(&quot;visible&quot;)) || editdetailsoption.equals(&quot;available&quot;)" iff="false" isActive="true" isAutoGenerated="false" name="" type="If-Then">
+        <requirement ID="xsp_25"/>
+        <if-expr is_or="true">
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="visible"/>
+            </focus-ctd-cond>
+        </if-expr>
+        <then-expr is_or="true">
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+        </then-expr>
+    </restriction>
+    <restriction expression="!(usertype.equals(&quot;guest&quot;)) || homepageversion.equals(&quot;versiona&quot;)" group="" groupedExpression="!(usertype.equals(&quot;guest&quot;)) || homepageversion.equals(&quot;versiona&quot;)" iff="false" isActive="true" isAutoGenerated="false" name="" type="If-Then">
+        <requirement ID="xsp_24"/>
+        <if-expr is_or="true">
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="guest"/>
+            </focus-ctd-cond>
+        </if-expr>
+        <then-expr is_or="true">
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+        </then-expr>
+    </restriction>
+    <restriction expression="!(usertype.equals(&quot;registered&quot;)) || homepageversion.equals(&quot;versionb&quot;)" group="" groupedExpression="!(usertype.equals(&quot;registered&quot;)) || homepageversion.equals(&quot;versionb&quot;)" iff="false" isActive="true" isAutoGenerated="false" name="" type="If-Then">
+        <requirement ID="xsp_23"/>
+        <if-expr is_or="true">
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="registered"/>
+            </focus-ctd-cond>
+        </if-expr>
+        <then-expr is_or="true">
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versionb"/>
+            </focus-ctd-cond>
+        </then-expr>
+    </restriction>
+    <restriction expression="!(accountprofilevisibility.equals(&quot;visible&quot;)) || editdetailsoption.equals(&quot;available&quot;)" group="" groupedExpression="!(accountprofilevisibility.equals(&quot;visible&quot;)) || editdetailsoption.equals(&quot;available&quot;)" iff="false" isActive="true" isAutoGenerated="false" name="" type="If-Then">
+        <requirement ID="xsp_25"/>
+        <if-expr is_or="true">
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="visible"/>
+            </focus-ctd-cond>
+        </if-expr>
+        <then-expr is_or="true">
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+        </then-expr>
+    </restriction>
+    <negative-combination>
+        <attr-value attribute="editdetailsoption" value="unavailable"/>
+    </negative-combination>
+    <negative-combination>
+        <attr-value attribute="accountprofilevisibility" value="hidden"/>
+    </negative-combination>
+    <negative-combination>
+        <attr-value attribute="usertype" value="unknown"/>
+    </negative-combination>
+    <negative-combination>
+        <attr-value attribute="homepageversion" value="invalid"/>
+    </negative-combination>
+    <negative-combination>
+        <attr-value attribute="paymentmethod" value="invalid"/>
+    </negative-combination>
+    <requirements-collection>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="" Keywords="" Ranking="2147483647" RequirementDescription="" RequirementId=" XSP-22" Restrictions=""/>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="" Keywords="" Ranking="2147483647" RequirementDescription="" RequirementId=" XSP-23" Restrictions=""/>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="" Keywords="" Ranking="2147483647" RequirementDescription="" RequirementId="xsp_24" Restrictions=""/>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="" Keywords="" Ranking="2147483647" RequirementDescription="" RequirementId=" XSP-24" Restrictions=""/>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="" Keywords="" Ranking="2147483647" RequirementDescription="" RequirementId="xsp_25" Restrictions=""/>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="" Keywords="" Ranking="2147483647" RequirementDescription="" RequirementId=" XSP-25" Restrictions=""/>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="" Keywords="" Ranking="2147483647" RequirementDescription="" RequirementId="xsp_22" Restrictions=""/>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="" Keywords="" Ranking="2147483647" RequirementDescription="" RequirementId="xsp_23" Restrictions=""/>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="" Keywords="" Ranking="2147483647" RequirementDescription="" RequirementId="XSP-22" Restrictions=""/>
+        <requirement-node Ambiguity="" Complexity="Simple" DocumentName="" Keywords="" Ranking="2147483647" RequirementDescription="" RequirementId="XSP-25" Restrictions=""/>
+    </requirements-collection>
+    <coverage-reqs-sets defaultCoverageRequirementsSet="default">
+        <coverage-reqs-set description="" name="default">
+            <coverage-req>
+                <attribute name="usertype"/>
+                <attribute name="homepageversion"/>
+                <attribute name="accountprofilevisibility"/>
+                <attribute name="editdetailsoption"/>
+                <attribute name="paymentmethod"/>
+                <attribute name="usertype"/>
+                <attribute name="homepageversion"/>
+                <attribute name="accountprofilevisibility"/>
+                <attribute name="editdetailsoption"/>
+                <attribute name="paymentmethod"/>
+                <coverage-goal coverage-goal-val="1"/>
+            </coverage-req>
+        </coverage-reqs-set>
+    </coverage-reqs-sets>
+    <neg-coverage-reqs-sets defaultCoverageRequirementsSet="SingleNegativeCoverageRequirementsSet" isAutoNegCoverageRequirements="true">
+        <coverage-reqs-set description="" name="SingleNegativeCoverageRequirementsSet">
+            <coverage-req>
+                <coverage-goal coverage-goal-val="1"/>
+                <negative-attribute-combination>
+                    <attribute name="editdetailsoption"/>
+                </negative-attribute-combination>
+            </coverage-req>
+            <coverage-req>
+                <coverage-goal coverage-goal-val="1"/>
+                <negative-attribute-combination>
+                    <attribute name="accountprofilevisibility"/>
+                </negative-attribute-combination>
+            </coverage-req>
+            <coverage-req>
+                <coverage-goal coverage-goal-val="1"/>
+                <negative-attribute-combination>
+                    <attribute name="usertype"/>
+                </negative-attribute-combination>
+            </coverage-req>
+            <coverage-req>
+                <coverage-goal coverage-goal-val="1"/>
+                <negative-attribute-combination>
+                    <attribute name="homepageversion"/>
+                </negative-attribute-combination>
+            </coverage-req>
+            <coverage-req>
+                <coverage-goal coverage-goal-val="1"/>
+                <negative-attribute-combination>
+                    <attribute name="paymentmethod"/>
+                </negative-attribute-combination>
+            </coverage-req>
+        </coverage-reqs-set>
+    </neg-coverage-reqs-sets>
+    <focus-ctd-decoration decorationName="DefaultTestCaseNameDecoration" decorationType="testCaseName" isActiveDecoration="false"/>
+    <focus-ctd-decoration decorationName="DefaultFreeStyleDecoration" decorationType="freeStyle" isActiveDecoration="false"/>
+    <focus-ctd-decoration decorationName="DefaultCucumberDecoration" decorationType="cucumberDecoration" isActiveDecoration="false"/>
+    <focus-ctd-decoration decorationName="DefaultStructuredDecoration" decorationType="structuredDecoration" isActiveDecoration="true">
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-1" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The user is a guest user.&#10;The homepage version is set to version A.&#10;The account profile is not visible.&#10;The edit details option is available.&#10;The payment method is set to PayPal."/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="guest"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="notvisible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="paypal"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-1" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The user navigates to the store's homepage and verifies that the homepage version A is displayed with a visually appealing list of popular items and categories, clearly highlighted items currently on sale, prompts inviting the user to create a new account, and prompts facilitating the user login process."/>
+                    <focus-ctd-template text="The user clicks on the prompt to create a new account and fills out the registration form with valid details."/>
+                    <focus-ctd-template text="The user receives a confirmation email and clicks on the link to confirm their account creation."/>
+                    <focus-ctd-template text="The user logs in to their newly created account and verifies that they are not redirected to a different homepage version."/>
+                    <focus-ctd-template text="The user hovers over the area where the account profile would be and verifies that the account profile is not visible."/>
+                    <focus-ctd-template text="The user searches for the edit details option and clicks on it to verify that it is available."/>
+                    <focus-ctd-template text="The user makes changes to their account information, such as name and email, and saves the changes."/>
+                    <focus-ctd-template text="The user navigates to the payment section and selects PayPal as their payment method."/>
+                    <focus-ctd-template text="The user enters their PayPal credentials and completes the payment process through a secure and encrypted connection."/>
+                    <focus-ctd-template text="The user receives a confirmation message or email detailing the order summary, including purchased items, quantities, and total cost."/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="Home page Version A is displayed when the user navigates to the store's homepage."/>
+                    <focus-ctd-template text="The user is able to create a new account and receive a confirmation email."/>
+                    <focus-ctd-template text="The account profile is not visible after logging in."/>
+                    <focus-ctd-template text="The &quot;Edit Details&quot; option is available and accessible."/>
+                    <focus-ctd-template text="The user is able to make changes to their account information and save the changes, and the system updates the account details accordingly."/>
+                    <focus-ctd-template text="The payment process is conducted through a secure and encrypted connection."/>
+                    <focus-ctd-template text="The user receives a confirmation message or email detailing the order summary after completing the payment process, including purchased items, quantities, and total cost, and providing the user with a reference for their completed purchase."/>
+                    <focus-ctd-template text="The user's account details are updated accordingly after making changes, and confirmation or feedback is provided to notify the user of the successful update of their account details."/>
+                    <focus-ctd-template text=""/>
+                    <focus-ctd-template text=""/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="guest"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="notvisible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="paypal"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test case description-1" negative="false" suppressNewLine="false" triggerType="Test_Case_Description">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="To verify that a guest user can navigate to the store, manage their account details, and complete a purchase using PayPal as a guest user with homepage version A, account profile not visible, edit details option available, and payment method as PayPal."/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="guest"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="notvisible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="paypal"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="testcase-1" negative="false" suppressNewLine="false" triggerType="Test_Case_Name">
+            <requirement ID=" XSP-25"/>
+            <requirement ID="XSP-22"/>
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Guest User Payment and Account Management"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="guest"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="notvisible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="paypal"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test data-1" negative="false" suppressNewLine="false" triggerType="Test_Data">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Valid PayPal account credentials&#10;Valid email address for account creation&#10;Valid name and other details for account creation"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="guest"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="notvisible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="paypal"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-2" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The user is registered and logged in to the system.&#10;The user has a valid credit card for payment.&#10;The user is on home page version B.&#10;The user's account profile is not visible."/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="registered"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versionb"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="notvisible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="notavailable"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="creditcard"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-2" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The user navigates to the checkout process to make a purchase."/>
+                    <focus-ctd-template text="The user selects the credit card payment method from the available options."/>
+                    <focus-ctd-template text="The user enters their credit card details, including credit card information, and confirms the payment."/>
+                    <focus-ctd-template text="The system processes the payment securely through a secure and encrypted connection."/>
+                    <focus-ctd-template text="The user receives a confirmation message or email detailing the order summary, including purchased items, quantities, and total cost."/>
+                    <focus-ctd-template text="The system updates the user's account details accordingly after the payment."/>
+                    <focus-ctd-template text="The user is presented with a feedback message confirming the successful update of their account details."/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The payment process is conducted through a secure and encrypted connection."/>
+                    <focus-ctd-template text="The user is prompted to enter their payment details, including credit card information."/>
+                    <focus-ctd-template text="The user receives a confirmation message or email detailing the order summary, including purchased items, quantities, and total cost, after successful payment."/>
+                    <focus-ctd-template text="The system updates the user's account details accordingly after the payment."/>
+                    <focus-ctd-template text="The user is presented with a feedback message confirming the successful update of their account details, such as &quot;Confirmation or feedback is provided to notify me of the successful update of my account details.&quot;"/>
+                    <focus-ctd-template text="The user's payment details are stored securely for future transactions, if chosen to be stored, and comply with industry-standard security measures."/>
+                    <focus-ctd-template text="The user can view their order summary, including purchased items, quantities, and total cost, in the confirmation message or email."/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="registered"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versionb"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="notvisible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="notavailable"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="creditcard"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test case description-2" negative="false" suppressNewLine="false" triggerType="Test_Case_Description">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="This test case verifies that a registered user can make a purchase using a credit card payment method on home page version B."/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="registered"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versionb"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="notvisible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="notavailable"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="creditcard"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="testcase-2" negative="false" suppressNewLine="false" triggerType="Test_Case_Name">
+            <requirement ID=" XSP-25"/>
+            <requirement ID="XSP-22"/>
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Registered User Payment with Credit Card"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="registered"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versionb"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="notvisible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="notavailable"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="creditcard"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test data-2" negative="false" suppressNewLine="false" triggerType="Test_Data">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Valid credit card details&#10;Registered user login credentials"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="registered"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versionb"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="notvisible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="notavailable"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="creditcard"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-3" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The user has access to the base URL of the store.&#10;The user has a valid credit card for payment."/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="guest"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="visible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="creditcard"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-3" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The user navigates to the base URL of the store and verifies that home page Version A is displayed."/>
+                    <focus-ctd-template text="The user clicks on the prompt to create a new account and fills out the registration form with valid details."/>
+                    <focus-ctd-template text="The user receives a confirmation email and clicks on the link to confirm their account creation."/>
+                    <focus-ctd-template text="The user logs in to their newly created account and is redirected to home page Version A, since the user type is guest and the home page version is versiona."/>
+                    <focus-ctd-template text="The user hovers over the account profile section and clicks on the &quot;Edit Details&quot; option, which is available."/>
+                    <focus-ctd-template text="The user makes changes to their account information, such as name and email, and saves the changes."/>
+                    <focus-ctd-template text="The user navigates to the payment section and selects the credit card payment method."/>
+                    <focus-ctd-template text="The user enters their credit card details and completes the payment process through a secure and encrypted connection."/>
+                    <focus-ctd-template text="The user receives a confirmation message or email detailing the order summary, including purchased items, quantities, and total cost."/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="Home page Version A is displayed when the user navigates to the base URL."/>
+                    <focus-ctd-template text="The user is able to create a new account and receive a confirmation email."/>
+                    <focus-ctd-template text="The user is able to log in to their account."/>
+                    <focus-ctd-template text="The &quot;Edit Details&quot; option is visible and accessible when hovering over the account profile section."/>
+                    <focus-ctd-template text="The user is able to make changes to their account information and save the changes, and the system updates the account details accordingly."/>
+                    <focus-ctd-template text="The payment process is secure and the user is able to complete the payment using a credit card."/>
+                    <focus-ctd-template text="The user receives a confirmation message or email detailing the order summary after completing the payment."/>
+                    <focus-ctd-template text="The account profile section is visible and accessible."/>
+                    <focus-ctd-template text="Confirmation or feedback is provided to notify the user of the successful update of their account details."/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="guest"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="visible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="creditcard"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test case description-3" negative="false" suppressNewLine="false" triggerType="Test_Case_Description">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="To verify that a guest user can successfully navigate to the store, manage their account details, and complete a purchase using a credit card."/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="guest"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="visible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="creditcard"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="testcase-3" negative="false" suppressNewLine="false" triggerType="Test_Case_Name">
+            <requirement ID=" XSP-25"/>
+            <requirement ID="XSP-22"/>
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Guest User Payment and Account Management with Visible Profile"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="guest"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="visible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="creditcard"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test data-3" negative="false" suppressNewLine="false" triggerType="Test_Data">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Valid credit card details&#10;Valid email address for account creation&#10;Valid name and other details for account creation"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="guest"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="visible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="creditcard"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-4" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The user is registered and logged in to the system.&#10;The user has a visible and accessible account profile.&#10;The user is directed to the version B homepage.&#10;The &quot;Edit Details&quot; option is available for the user."/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="registered"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versionb"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="visible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="invalid"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-4" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The user navigates to the account profile section and hovers over it to display the menu or option labeled &quot;Edit Details&quot;."/>
+                    <focus-ctd-template text="The user clicks on the &quot;Edit Details&quot; option and is presented with a form or modal where they can adjust their account information."/>
+                    <focus-ctd-template text="The user makes adjustments to their account information as needed and saves the changes."/>
+                    <focus-ctd-template text="The system updates the user's account details accordingly and provides confirmation or feedback to notify the user of the successful update of their account details."/>
+                    <focus-ctd-template text="The user attempts to complete a purchase using the selected payment method."/>
+                    <focus-ctd-template text="The system prevents the purchase from being completed and displays an error message."/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The account profile section is visible and accessible to the user."/>
+                    <focus-ctd-template text="The &quot;Edit Details&quot; option is displayed when the user hovers over the account profile."/>
+                    <focus-ctd-template text="The user can successfully update their account information and receive confirmation or feedback."/>
+                    <focus-ctd-template text="The system prevents the purchase from being completed with an invalid payment method."/>
+                    <focus-ctd-template text="An error message is displayed to the user indicating that the payment method is invalid, and the user receives a confirmation message or email detailing the order summary, including purchased items, quantities, and total cost, upon successful payment."/>
+                    <focus-ctd-template text="The user's account details are updated successfully, but the purchase is not completed, and the user is notified of the successful update of their account details."/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="registered"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versionb"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="visible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="invalid"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test case description-4" negative="false" suppressNewLine="false" triggerType="Test_Case_Description">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="This test case verifies the functionality of a registered user with a visible account profile, version B homepage, and an invalid payment method."/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="registered"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versionb"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="visible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="invalid"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="testcase-4" negative="false" suppressNewLine="false" triggerType="Test_Case_Name">
+            <requirement ID=" XSP-22"/>
+            <requirement ID=" XSP-23"/>
+            <requirement ID=" XSP-24"/>
+            <requirement ID="XSP-25"/>
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Registered User with Version B Homepage and Visible Account Profile"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="registered"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versionb"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="visible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="invalid"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test data-4" negative="false" suppressNewLine="false" triggerType="Test_Data">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Registered user credentials&#10;Invalid payment method details&#10;Updated account information"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="registered"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versionb"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="visible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="invalid"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-5" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The user is a registered user with a hidden account profile visibility.&#10;The edit details option is available for the user.&#10;The user has a PayPal account for payment method.&#10;The user is on home page Version B."/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="registered"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versionb"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="hidden"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="paypal"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-5" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The user logs in to the system with their credentials and is redirected to the home page."/>
+                    <focus-ctd-template text="The user navigates to their account profile section and clicks on the &quot;Edit Details&quot; option."/>
+                    <focus-ctd-template text="The user updates their account information, including name, email, and password, and saves the changes."/>
+                    <focus-ctd-template text="The system updates the user's account details accordingly and provides confirmation or feedback."/>
+                    <focus-ctd-template text="The user proceeds to make a purchase and selects PayPal as the payment method."/>
+                    <focus-ctd-template text="The user enters their PayPal credentials and completes the payment process."/>
+                    <focus-ctd-template text="The system processes the payment securely and provides a confirmation message or email detailing the order summary."/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The account profile section is visible and accessible on the user interface."/>
+                    <focus-ctd-template text="The &quot;Edit Details&quot; option is displayed when the user navigates to their account profile."/>
+                    <focus-ctd-template text="The form or modal for adjusting account information includes fields for relevant details such as name, email, password, and any other applicable information."/>
+                    <focus-ctd-template text="The user can make adjustments to their account information and save the changes successfully."/>
+                    <focus-ctd-template text="The system updates the user's account details accordingly and provides confirmation or feedback to notify the user of the successful update of their account details."/>
+                    <focus-ctd-template text="The payment process is conducted through a secure and encrypted connection."/>
+                    <focus-ctd-template text="The user receives a confirmation message or email detailing the order summary, including purchased items, quantities, and total cost, upon successful payment."/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="registered"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versionb"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="hidden"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="paypal"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test case description-5" negative="false" suppressNewLine="false" triggerType="Test_Case_Description">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="To verify that a registered user can manage their account details and complete a purchase using PayPal as the payment method."/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="registered"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versionb"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="hidden"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="paypal"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="testcase-5" negative="false" suppressNewLine="false" triggerType="Test_Case_Name">
+            <requirement ID=" XSP-22"/>
+            <requirement ID="XSP-25"/>
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Manage Account Details and Payment as Registered User"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="registered"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versionb"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="hidden"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="paypal"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test data-5" negative="false" suppressNewLine="false" triggerType="Test_Data">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="User login credentials (username and password)&#10;Updated account information (name, email, password)&#10;PayPal account details for payment method"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="registered"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versionb"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="hidden"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="paypal"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-6" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The user is logged in as a guest.&#10;The home page version displayed is Version A.&#10;The account profile visibility is not visible.&#10;The edit details option is unavailable.&#10;The payment method selected is credit card."/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="guest"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="notvisible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="unavailable"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="creditcard"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-6" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The user navigates to the base URL and verifies that home page Version A is displayed with a visually appealing list of popular items and categories."/>
+                    <focus-ctd-template text="The user selects items to purchase and proceeds to the checkout process where they can select their preferred payment method from the available options."/>
+                    <focus-ctd-template text="The user selects the credit card payment method and enters their payment details, including credit card information."/>
+                    <focus-ctd-template text="The user reviews their order summary, including purchased items, quantities, and total cost, and confirms the payment."/>
+                    <focus-ctd-template text="The system processes the payment securely and updates the order status, providing a confirmation message or email detailing the order summary."/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The payment process is conducted through a secure and encrypted connection."/>
+                    <focus-ctd-template text="The user receives a confirmation message or email detailing the order summary, including purchased items, quantities, and total cost, after successful payment."/>
+                    <focus-ctd-template text="The system updates the order status to reflect the successful payment."/>
+                    <focus-ctd-template text="The user receives a confirmation that their payment has been successfully processed."/>
+                    <focus-ctd-template text="The payment details are handled in accordance with industry-standard security measures."/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="guest"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="notvisible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="unavailable"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="creditcard"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test case description-6" negative="false" suppressNewLine="false" triggerType="Test_Case_Description">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="To verify that a guest user can successfully complete a purchase using a credit card on home page Version A."/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="guest"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="notvisible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="unavailable"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="creditcard"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="testcase-6" negative="false" suppressNewLine="false" triggerType="Test_Case_Name">
+            <requirement ID=" XSP-24"/>
+            <requirement ID="XSP-22"/>
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Guest User Payment with Credit Card on Home Page Version A"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="guest"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="notvisible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="unavailable"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="creditcard"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test data-6" negative="false" suppressNewLine="false" triggerType="Test_Data">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Credit card number&#10;Expiration date&#10;Security code&#10;Billing address"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="guest"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="notvisible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="unavailable"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="creditcard"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="pre requisite-7" negative="false" suppressNewLine="false" triggerType="Preconditions">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="The user is on the home page version A.&#10;The user has a visible account profile section.&#10;The &quot;Edit Details&quot; option is available for the user.&#10;The payment method is set to credit card."/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="unknown"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="visible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="creditcard"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test step-7" negative="false" suppressNewLine="false" triggerType="Test_Steps">
+            <focus-ctd-multiple-template>
+                <focus-ctd-multiple-template-testSteps>
+                    <focus-ctd-template text="The user navigates to the home page and verifies that the account profile section is visible and accessible."/>
+                    <focus-ctd-template text="The user hovers over the account profile section and clicks on the &quot;Edit Details&quot; option to access the account information form."/>
+                    <focus-ctd-template text="The user makes adjustments to their account information as needed and saves the changes to update their account details."/>
+                    <focus-ctd-template text="The user proceeds to the checkout process and selects the credit card as their payment method to complete the purchase."/>
+                    <focus-ctd-template text="The user enters their credit card information, including credit card number, expiration date, and CVV, to process the payment."/>
+                    <focus-ctd-template text="The user completes the payment process and verifies that the payment is processed securely."/>
+                    <focus-ctd-template text="The user receives a confirmation message or email detailing the order summary, including purchased items, quantities, and total cost, after successful payment."/>
+                </focus-ctd-multiple-template-testSteps>
+                <focus-ctd-multiple-template-expectedResults>
+                    <focus-ctd-template text="The account profile section is visible and accessible on the home page."/>
+                    <focus-ctd-template text="The &quot;Edit Details&quot; option is displayed when hovering over the account profile."/>
+                    <focus-ctd-template text="The user can adjust their account information and save changes successfully, and the system updates the user's account details accordingly."/>
+                    <focus-ctd-template text="The system provides confirmation or feedback to notify the user of the successful update of their account details."/>
+                    <focus-ctd-template text="The credit card payment method is available and selected during checkout."/>
+                    <focus-ctd-template text="The payment process is secure and completed successfully, and the system conducts the payment process through a secure and encrypted connection."/>
+                    <focus-ctd-template text="The user receives a confirmation message or email with the order summary, including purchased items, quantities, and total cost, after successful payment."/>
+                </focus-ctd-multiple-template-expectedResults>
+                <focus-ctd-multiple-template-additionalInfo/>
+            </focus-ctd-multiple-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="unknown"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="visible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="creditcard"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test case description-7" negative="false" suppressNewLine="false" triggerType="Test_Case_Description">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="This test case verifies that an unknown user can manage their account and make a payment using a credit card on the home page."/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="unknown"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="visible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="creditcard"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="testcase-7" negative="false" suppressNewLine="false" triggerType="Test_Case_Name">
+            <requirement ID=" XSP-22"/>
+            <requirement ID="XSP-25"/>
+            <focus-ctd-single-template>
+                <focus-ctd-template text="Unknown User Account Management and Payment"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="unknown"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="visible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="creditcard"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+        <focus-ctd-trigger appliance="ALWAYS" is_or="false" name="test data-7" negative="false" suppressNewLine="false" triggerType="Test_Data">
+            <focus-ctd-single-template>
+                <focus-ctd-template text="User account information (name, email, password)&#10;Credit card details (card number, expiration date, CVV)"/>
+            </focus-ctd-single-template>
+            <focus-ctd-cond attribute="usertype" operation="Equals">
+                <focus-ctd-cond-val value="unknown"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="homepageversion" operation="Equals">
+                <focus-ctd-cond-val value="versiona"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="accountprofilevisibility" operation="Equals">
+                <focus-ctd-cond-val value="visible"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="editdetailsoption" operation="Equals">
+                <focus-ctd-cond-val value="available"/>
+            </focus-ctd-cond>
+            <focus-ctd-cond attribute="paymentmethod" operation="Equals">
+                <focus-ctd-cond-val value="creditcard"/>
+            </focus-ctd-cond>
+        </focus-ctd-trigger>
+    </focus-ctd-decoration>
+    <deactivates/>
+    <attrs-to-delete/>
+    <pool_comments/>
+    <db-dependencies/>
+    <focus-ctd-model-sync>
+        <focus-ctd-model-sync-mult/>
+        <focus-ctd-model-sync-na/>
+    </focus-ctd-model-sync>
+</focus-model>
